@@ -76,7 +76,7 @@ body:
     id: ferramenta
     attributes:
       label: Ferramenta
-      description: Claude Code ou Codex (a do papel na tabela Ferramenta por papel, ou a outra se a cota apertou) e o nome da Builder, como "Backend Builder #12 · login · Codex".
+      description: Claude Code (o único usado neste projeto) e o nome da Builder, como "Frontend Builder #12 · hero · Claude Code".
     validations:
       required: true
   - type: input

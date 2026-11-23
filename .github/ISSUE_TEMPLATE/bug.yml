@@ -74,4 +74,4 @@ body:
     id: ferramenta
     attributes:
       label: Ferramenta (a Lead preenche)
-      description: Claude Code ou Codex e o nome da Builder, como "Backend Builder #31 · login-expira · Codex".
+      description: Claude Code (o único usado neste projeto) e o nome da Builder, como "Frontend Builder #12 · hero · Claude Code".
