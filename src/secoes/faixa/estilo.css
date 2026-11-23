@@ -1,0 +1,71 @@
+/* Alturas da faixa e do cabeçalho para a página inteira: a âncora de uma seção para abaixo dos dois (R-02).
+   Depois do fim a faixa some, e a altura dela vira 0. */
+:root {
+  --altura-faixa: 36px;
+  --altura-cabecalho: 64px;
+  --margem-da-pagina: calc(var(--espaco-3) + var(--espaco-1));
+}
+@media (min-width: 900px) {
+  :root {
+    --altura-faixa: 40px;
+    --altura-cabecalho: 72px;
+    --margem-da-pagina: calc(var(--espaco-5) + var(--espaco-2));
+  }
+}
+html[data-oferta="encerrada"] { --altura-faixa: 0px; }
+html { scroll-padding-top: calc(var(--altura-faixa, 0px) + var(--altura-cabecalho)); }
+
+/* Fixa no topo (contrato com o hero, #10: o hero se afasta com padding-top = faixa + cabeçalho).
+   O [data-oferta] dentro do invólucro é o que some no fim. */
+.faixa {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+}
+
+.faixa__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-3);
+  height: var(--altura-faixa);
+  padding: 0 var(--margem-da-pagina);
+  background: var(--cor-preto);
+  color: var(--cor-claro);
+  font: 500 10px/1 var(--fonte-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.faixa__texto { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.faixa__texto s { text-decoration-thickness: 1px; }
+.faixa__separador { padding: 0 var(--espaco-2); }
+.faixa__texto--desktop, .faixa__contagem--desktop { display: none; }
+
+.faixa__relogio { flex: none; font-weight: 700; }
+/* O ponto azul só aparece com a contagem (sem JavaScript, ela não existe). */
+.faixa__contagem:not(:empty)::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: var(--espaco-2);
+  border-radius: 50%;
+  background: var(--cor-azul-no-escuro);
+  vertical-align: 1px;
+}
+
+@media (min-width: 900px) {
+  /* Entre 900 e 1200 o texto completo só cabe com menos espaçamento. */
+  .faixa__barra { gap: var(--espaco-4); letter-spacing: 0.04em; }
+  .faixa__separador { padding: 0 var(--espaco-1); }
+  .faixa__texto--celular, .faixa__contagem--celular { display: none; }
+  .faixa__texto--desktop, .faixa__contagem--desktop { display: inline; }
+}
+@media (min-width: 1200px) {
+  .faixa__barra { font-size: 11px; letter-spacing: 0.08em; }
+  .faixa__separador { padding: 0 var(--espaco-2); }
+}
