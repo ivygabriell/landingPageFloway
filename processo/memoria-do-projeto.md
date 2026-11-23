@@ -81,3 +81,9 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 
 - **Decisões da pessoa:** oferta "de R$ 4.997 por R$ 997" (R$ 4.997 é o preço real cobrado hoje); o R$ 997 vale para um site do tipo que o cliente quiser; os 3 dias contam a partir do fechamento do material com o cliente; os botões esperam o formulário da Floway (sem WhatsApp como alternativa); menu da leva 1 só com Incluso, Conceitos e Perguntas. Seção Incluso (R-05) aprovada, mais agressiva, como o único trecho escuro.
 - **Onde parou:** Incluso e hero revistos registrados; próximo desenho é Conceitos (R-06), com as 5 peças do site oficial.
+
+**2026-11-23 · Conceitos aprovados (Lead, Claude Code)**
+
+- **Aprovado pela pessoa:** Conceitos (R-06) com as cinco peças do site oficial. Decisões: não citar clientes fictícios no texto; sem indicador de progresso na galeria (a pessoa tirou a barra e depois o F que se preenchia, direto no Penpot). O selo "Conceito" continua nos cartões (regra da marca), sem objeção da pessoa até aqui.
+- **Pendências da pessoa:** destino do clique nos conceitos; tirar ou manter "Medição" e "Animação e 3D" na faixa de benefícios do hero.
+- **Onde parou:** Conceitos registrados; próximos desenhos: Perguntas (R-09) e Chamada final (R-10).

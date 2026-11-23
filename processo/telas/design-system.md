@@ -26,3 +26,5 @@ Catálogo do que existe no Penpot (conjunto de tokens `Floway`, cores da bibliot
 | Contagem em caixas | dias, horas, min, seg | contando; some no fim da oferta | 4 caixas com contorno #3A3A3A, raio 10, número Inter Tight 700 34/52 |
 | Lista com ✓ | — | os itens se marcam um depois do outro ao rolar | ✓ `cor.azul-no-escuro`, Inter Tight 500 18–21, linhas #3A3A3A |
 | Botão claro | sobre o escuro (`cor.claro`, texto `cor.preto`) | padrão; hover cresce 2 % | 60/68 de altura |
+| Cartão de conceito | capa 730×1080 com raio 12; hover com sombra e "Abrir o site ↗" | padrão, hover/foco | selo "Conceito" (contorno `cor.preto`, Azeret Mono 10), nome Inter Tight 600 20–22, setor · tipo Azeret Mono 11 |
+| Botão contorno | "Quero um site assim →" | padrão | contorno `cor.preto`, 52/60 de altura |
