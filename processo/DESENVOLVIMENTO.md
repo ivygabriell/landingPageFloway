@@ -19,7 +19,7 @@ Os detalhes de cada fase, os cenários, os casos e as lições ficam no reposit�
 
 ## Ferramenta por papel
 
-Cada sessão usa a ferramenta do seu papel; a Builder usa a do papel de quem a abre e vai para a outra quando a cota aperta (com passagem pela issue). No Orca: `--agent claude --model claude-opus-5-5` (Claude Code) ou `--agent codex --model gpt-6.1-sol` (Codex). Mudar esta tabela é uma decisão da pessoa, registrada na memória.
+**Só o Claude Code**, em todos os papéis (decisão da pessoa em 2026-11-22: "não utilize o codex, somente o claude"; substitui a tabela de duas ferramentas gerada pelo método). No Orca: `--agent claude --model claude-opus-5-5`. Mudar esta tabela é uma decisão da pessoa, registrada na memória.
 
 | Papel | Ferramenta padrão |
 |---|---|
@@ -28,9 +28,9 @@ Cada sessão usa a ferramenta do seu papel; a Builder usa a do papel de quem a a
 | Architect | Claude Code |
 | Frontend | Claude Code |
 | Designer | Claude Code |
-| Backend | Codex |
-| Security | Codex |
-| Ops | Codex |
+| Backend | Claude Code |
+| Security | Claude Code |
+| Ops | Claude Code |
 
 ## Aprovações
 
@@ -50,7 +50,7 @@ Uma decisão é da pessoa quando aciona pelo menos um gatilho: muda **o que** se
 - Tarefas: issues com o formulário de tarefa (`.github/ISSUE_TEMPLATE/tarefa.yml`). Bugs: o formulário de bug (`.github/ISSUE_TEMPLATE/bug.yml`) e o "Ciclo de um bug" do método.
 - Worktrees: `processo/scripts/nova-tarefa.sh <tipo> <slug>` e `processo/scripts/remover-tarefa.sh <tipo> <slug>`.
 - Com o Orca: a Lead distribui as tarefas aos agentes (`orca orchestration worker-start`); o Orca cria e remove as worktrees, e os scripts acima ficam para quem trabalha sem ele. Prompt: `modelos/prompt-lead-orca.md` do método.
-- Ferramentas: cada papel usa a sua (seção Ferramenta por papel, acima). O Claude Code lê o `CLAUDE.md`; o Codex lê o `AGENTS.md`, que manda ler o `CLAUDE.md`. Todo PR recebe ao menos uma revisão da outra ferramenta. Quando a cota acaba no meio da tarefa, a Builder faz commit, envia a branch e comenta na issue onde parou; outra Builder, na outra ferramenta, continua na mesma branch. Com back e front em tarefas paralelas, o contrato da API é aprovado antes de qualquer tarefa de construção.
+- Ferramentas: só o Claude Code (seção Ferramenta por papel, acima), que lê o `CLAUDE.md`. Todo PR recebe ao menos uma revisão com contexto limpo, de outra sessão do Claude Code aberta no Orca. Quando a cota acaba no meio da tarefa, a Builder faz commit, envia a branch e comenta na issue onde parou; outra sessão do Claude Code continua na mesma branch. Com back e front em tarefas paralelas, o contrato da API é aprovado antes de qualquer tarefa de construção.
 - Para trazer este projeto à versão mais nova do método: `/metodo:atualizar-projeto`.
 - Requisitos: `processo/requisitos.md` (fichas R-xx com o peso). Com interface, a identidade e todas as telas são aprovadas no Figma e registradas em `processo/telas/` antes do plano; o código segue a versão registrada.
 - Memória do projeto: `processo/memoria-do-projeto.md`.

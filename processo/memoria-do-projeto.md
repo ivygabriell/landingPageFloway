@@ -64,3 +64,5 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 - **Referências:** a pessoa não indicou outras; a Lead usa o site oficial e a identidade como referência (chamada da Lead, a conferir).
 - **Penpot:** servidor MCP copiado do projeto do site oficial para o escopo local deste projeto (fora do repositório); as ferramentas só carregam numa sessão nova.
 - **Onde parou:** requisitos escritos; próximo passo é a identidade no Penpot (tokens da Floway) e o desenho do hero, celular primeiro.
+
+- **Ferramenta (2026-11-22):** a pessoa decidiu "não utilize o codex, somente o claude". Todos os papéis no Claude Code; a revisão cruzada vira revisão com contexto limpo por outra sessão do Claude Code no Orca. A revisão do Codex dos PRs #1 e #2 tinha parado no limite de uso do Codex e foi encerrada (`worker-stop`).
