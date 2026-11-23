@@ -22,7 +22,7 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 ## R-01 · Hero com a promessa e o botão principal
 
 - **História:** como dono ou gestor de uma empresa que chegou à página, quero entender em segundos o que a Floway faz e sentir que é diferente, para decidir continuar lendo ou pedir um projeto.
-- **Regras de negócio:** uma promessa (título curto) e uma frase de apoio; uma faixa de benefícios no pé da seção (Estratégia, Texto que vende, Design sob medida, Animação e 3D, Site rápido, Medição), rolando devagar; um botão principal "Iniciar um projeto" e um secundário "Ver como funciona" que leva ao Incluso (R-05) na leva 1; a palavra FLOWAY com o efeito de vidro e glitch da marca, montada na entrada e na rolagem.
+- **Regras de negócio:** uma promessa (título curto) e uma frase de apoio; uma faixa de benefícios no pé da seção (Estratégia, Texto que vende, Design sob medida, Site rápido; Medição e Animação e 3D saíram em 2026-11-23, decisão da pessoa), rolando devagar; um botão principal "Iniciar um projeto" e um secundário "Ver como funciona" que leva ao Incluso (R-05) na leva 1; a palavra FLOWAY com o efeito de vidro e glitch da marca, montada na entrada e na rolagem.
 - **Casos de erro:** sem WebGL, a palavra aparece estática com o mesmo enquadramento; com movimento reduzido, sem animação e com todo o texto visível.
 - **Critérios de aceite:**
   - [ ] título, frase de apoio e botão principal visíveis sem rolar em 390×844 e em 1440×900
@@ -96,7 +96,7 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
   - [ ] a galeria funciona pelo teclado
 - **Dependências:** R-11; quais conceitos entram é decisão da pessoa.
 - **Telas:** `Conceitos · celular`, `Conceitos · desktop` (Penpot), aprovadas em 2026-11-23, registro em `processo/telas/`.
-- **Pendente da pessoa:** o destino do clique em cada conceito (proposta: a página do conceito no site oficial, em aba nova).
+- **Clique em cada conceito:** abre o site do conceito como no site oficial (`flowayy.vercel.app/conceitos/<slug>/index.html`), numa aba nova (decisão da pessoa em 2026-11-23). As capas ficam como no site oficial, com o conteúdo dos próprios conceitos (decisão da pessoa em 2026-11-23).
 - **Peso:** valor alto (prova); esforço M; risco médio (direitos e marcas fictícias, INPI).
 - **Prioridade proposta:** 5 (leva 1).
 - **Fora do escopo:** página de case.
@@ -130,12 +130,12 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 ## R-09 · Perguntas frequentes
 
 - **História:** como comprador com dúvidas, quero respostas diretas antes de falar com alguém.
-- **Regras de negócio:** perguntas sobre diferença entre site e landing page, prazo (enquanto a oferta de R-12 vale: entrega em até 3 dias; depois: o prazo sai do diagnóstico), identidade visual, integrações e manutenção; respostas abrem com movimento suave.
+- **Regras de negócio:** título "Respostas diretas." e apoio "O que todo mundo pergunta antes de fechar."; cinco perguntas, aprovadas pela pessoa em 2026-11-23: (1) "O que eu recebo por R$ 997?" — "Um site completo, do tipo que o seu negócio precisar: landing page, site institucional ou outro formato. Estrutura, texto, design sob medida, animações, o básico para aparecer no Google e o contato funcionando."; (2) "Em quanto tempo fica pronto?" — "Em até 3 dias, contados a partir do fechamento do material com você."; (3) "Até quando vale a condição de Black Friday?" — "Para projetos fechados até 27/11 às 23h59, no horário de Brasília. Depois disso, a condição acaba."; (4) "Landing page ou site: qual eu preciso?" — "A landing page fala com um público e leva a uma ação só. O site apresenta o seu negócio inteiro. Na conversa, a gente ajuda você a escolher o formato certo."; (5) "Como eu começo?" — "Clique em 'Iniciar um projeto', conte o que você precisa e a gente fecha o material com você." Uma aberta por vez; a primeira começa aberta. Depois do fim da oferta, as perguntas 1 a 3 precisam de respostas novas, a definir pela pessoa. Fora da lista até a pessoa responder: domínio e hospedagem, manutenção, logo.
 - **Casos de erro:** com JavaScript desligado, as respostas ficam visíveis.
 - **Critérios de aceite:**
   - [ ] cada pergunta abre e fecha pelo teclado e informa o estado ao leitor de tela
 - **Dependências:** R-11.
-- **Telas:** `Perguntas · celular`, `Perguntas · desktop`.
+- **Telas:** `Perguntas · celular`, `Perguntas · desktop` (Penpot), aprovadas em 2026-11-23, registro em `processo/telas/`.
 - **Peso:** valor médio; esforço P; risco baixo.
 - **Prioridade proposta:** 6 (leva 1).
 - **Fora do escopo:** busca nas perguntas.
