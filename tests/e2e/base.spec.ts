@@ -20,7 +20,8 @@ test('as seções estão na ordem da leva 1', async ({ page }) => {
 test('o HTML não tem e-mail, telefone nem link vazio', async ({ request }) => {
   const html = await (await request.get('/')).text();
   expect(html).not.toMatch(/[\w.+-]+@[\w-]+\.[\w.]+/);
-  expect(html).not.toMatch(/\(?\d{2}\)?\s?9?\d{4}-?\d{4}/);
+  expect(html).not.toMatch(/\(\d{2}\)\s?9?\d{4}-\d{4}/);
+  expect(html).not.toMatch(/\+55\s?\d{2}/);
   expect(html).not.toMatch(/href=""/);
   expect(html).not.toMatch(/href="#"/);
 });

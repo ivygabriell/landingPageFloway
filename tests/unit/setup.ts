@@ -1,4 +1,9 @@
-import { afterAll } from 'vitest';
+import { afterAll, beforeEach, vi } from 'vitest';
+
+// Nenhum teste depende do relógio real: o instante do build fica dentro da oferta (quem precisa de outro troca).
+beforeEach(() => {
+  vi.stubEnv('OFERTA_AGORA', '2026-11-25T15:00:00Z');
+});
 
 if (typeof window !== 'undefined') {
   // O jsdom não implementa matchMedia; o ScrollTrigger e os componentes consultam ao carregar.

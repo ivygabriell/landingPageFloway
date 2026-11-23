@@ -29,6 +29,10 @@ test('dias e horas: 23/11 16h47min24s (UTC−3)', () => {
   expect(estadoDaOferta(em('2026-11-23T16:47:24-03:00'))).toEqual({ ativa: true, restante: { dias: 4, horas: 7, minutos: 12, segundos: 36 } });
 });
 
+test('vai-um da contagem curta: faltando 23h59min30s mostra 1 dia', () => {
+  expect(contagemCurta(em('2026-11-27T00:00:30-03:00'))).toBe('01d 00h 00m');
+});
+
 test('ofertaNoBuild respeita OFERTA_AGORA', () => {
   vi.stubEnv('OFERTA_AGORA', '2026-11-28T03:00:00Z');
   expect(ofertaNoBuild()).toBe(false);

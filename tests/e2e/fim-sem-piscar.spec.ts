@@ -6,7 +6,8 @@ test.use({ timezoneId: 'Europe/Lisbon' });
 
 test('depois do fim, nenhum quadro mostra a oferta', async ({ page }) => {
   // Antes do relógio falso: o requestAnimationFrame guardado é o do navegador, que só roda quando a página vai pintar
-  // (com as folhas de estilo carregadas). Conta como visto qualquer [data-oferta] com caixa no quadro.
+  // (com as folhas de estilo carregadas). Conta como visto qualquer [data-oferta] visível no quadro
+  // (checkVisibility: offsetParent é sempre null num elemento fixo, como a faixa).
   await page.addInitScript(() => {
     const w = window as unknown as { __quadros: number; __viuOferta: boolean };
     const quadro = window.requestAnimationFrame.bind(window);
@@ -14,7 +15,7 @@ test('depois do fim, nenhum quadro mostra a oferta', async ({ page }) => {
     w.__viuOferta = false;
     const olhar = () => {
       w.__quadros++;
-      for (const el of document.querySelectorAll('body [data-oferta]')) if (el.getClientRects().length > 0) w.__viuOferta = true;
+      for (const el of document.querySelectorAll('body [data-oferta]')) if (el.checkVisibility()) w.__viuOferta = true;
       quadro(olhar);
     };
     quadro(olhar);

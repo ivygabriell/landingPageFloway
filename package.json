@@ -6,7 +6,7 @@
     "build": "next build",
     "test": "vitest run",
     "check": "tsc --noEmit && eslint .",
-    "test:build": "next build && playwright test",
+    "test:build": "OFERTA_AGORA=2026-11-25T15:00:00Z next build && playwright test",
     "test:publicacao": "vitest run --config vitest.publicacao.config.ts"
   },
   "dependencies": {

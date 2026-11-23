@@ -40,7 +40,7 @@ export function contagemLonga(agora: Date): string {
   return `${doisDigitos(dias)}d ${doisDigitos(horas)}h ${doisDigitos(minutos)}m ${doisDigitos(segundos)}s`;
 }
 
-// O instante do build: OFERTA_AGORA (ISO) simula outro momento; o next.config a fixa no build para o servidor e o navegador.
+// O instante do build: OFERTA_AGORA (ISO) simula outro momento. Só do servidor (ver src/oferta/Oferta.tsx).
 const agoraDoBuild = () => (process.env.OFERTA_AGORA ? new Date(process.env.OFERTA_AGORA) : new Date());
 
 export const ofertaNoBuild = (): boolean => agoraDoBuild() < FIM_DA_OFERTA;

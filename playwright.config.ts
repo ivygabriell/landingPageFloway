@@ -11,7 +11,8 @@ export default defineConfig({
   workers: 1,
   use: { baseURL: `http://localhost:${porta}`, channel: canal, viewport: { width: 1440, height: 900 } },
   webServer: {
-    command: `python3 -m http.server ${porta} -d out`,
+    // O mesmo que `python3 -m http.server ${porta} -d out`, com a fila de conexões maior (ver o arquivo).
+    command: `python3 tests/e2e/servidor.py ${porta}`,
     url: `http://localhost:${porta}`,
     reuseExistingServer: false,
     timeout: 120_000,
