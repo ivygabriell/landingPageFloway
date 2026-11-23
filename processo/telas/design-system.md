@@ -4,7 +4,7 @@ Catálogo do que existe no Penpot (conjunto de tokens `Floway`, cores da bibliot
 
 ## Tokens
 
-- **Cor:** `cor.claro` #F7F7F5 (fundo), `cor.cinza-claro` #DCDCD8 (linhas), `cor.cinza-medio` #787878 (só texto ≥ 24 px e linhas), `cor.preto` #121212 (texto), `cor.azul` #002FA7 (só detalhes), `cor.azul-no-escuro` #5B7BFF, `cor.papel` #FFFFFF (vidro e papel). Semânticos: `cor.fundo`, `cor.texto`, `cor.detalhe`.
+- **Cor:** `cor.claro` #F7F7F5 (fundo), `cor.cinza-claro` #DCDCD8 (linhas), `cor.cinza-medio` #787878 (só texto ≥ 24 px e linhas), `cor.preto` #121212 (texto), `cor.azul` #002FA7 (só detalhes), `cor.azul-no-escuro` #5B7BFF, `cor.papel` #FFFFFF (vidro e papel; na identidade, o branco é "só papel", spec do site oficial). Semânticos: `cor.fundo`, `cor.texto`, `cor.detalhe`.
 - **Fonte:** `fonte.sans` Inter Tight, `fonte.mono` Azeret Mono, `fonte.serif` Instrument Serif.
 - **Espaço:** `espaco.1` a `espaco.7` (4, 8, 16, 24, 40, 64, 104). **Raio:** `raio.botao` 999, `raio.cartao` 12.
 
@@ -20,4 +20,4 @@ Catálogo do que existe no Penpot (conjunto de tokens `Floway`, cores da bibliot
 | Lâmina de vidro | — | inclinada −8°, desfoque de fundo 6–10, papel 16 %, contorno papel 90 % | celular 74×200, desktop 168×380 |
 | Faixa de benefícios | — | rolando; parada no reduzido | 52 de altura, linha `cor.cinza-claro` no topo, Azeret Mono 11 |
 | Faixa de urgência | celular (oferta curta + dias, horas, minutos), desktop (oferta completa + segundos) | contando; some ao zerar | 36/40 de altura, `cor.preto`, Azeret Mono 10–11 `cor.claro`, ponto `cor.azul-no-escuro` |
-| Selo Black Friday | — | só durante a oferta | pílula `cor.azul`, Azeret Mono 700 11 `cor.papel`, 22 de altura |
+| Selo Black Friday | celular: "(01) [Black Friday] Sites sob medida" (texto curto por espaço); desktop: texto inteiro | só durante a oferta | pílula `cor.azul`, Azeret Mono 700 11 `cor.papel`, 22 de altura |
