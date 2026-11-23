@@ -2,7 +2,7 @@
 
 Versão do método: 7.0.0
 Lead: Claude Code
-Telas: (link do arquivo do Figma; registro em processo/telas/; "sem interface" se não houver)
+Telas: Penpot (decisão da pessoa em 2026-11-22, no lugar do Figma; link do arquivo quando criado); registro em processo/telas/
 Cenários aplicados:
 - site-estatico (testado em 1 projeto)
 

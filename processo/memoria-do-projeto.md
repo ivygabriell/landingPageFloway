@@ -56,3 +56,11 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 - **Decisões da pessoa:** a landing **não** parte da `landing-floway` que existe em `ivygabriell/sitesFlowway` (`apps/site/public/conceitos/landing-floway/`); é outra. Do site oficial vêm a identidade e as regras da marca. Commits com o e-mail `noreply` do GitHub (configurado só neste repositório).
 - **Referências:** site oficial `ivygabriell/sitesFlowway` (Next.js 15.5, método 6.0.0); identidade em `CreateHubAI/identidadeFloway` (só leitura: paleta `#F7F7F5` `#DCDCD8` `#787878` `#121212`, azul `#002FA7`/`#5B7BFF` só em detalhes; Inter Tight, Azeret Mono, Instrument Serif; logo só pelos arquivos de `assets/brand/`). Regras da marca no site oficial: nada inventado (cliente, número, depoimento), trabalho sem cliente leva "Conceito", sem e-mail ou telefone na página, `noindex` até publicar, publicar é decisão da pessoa.
 - **Onde parou:** estrutura do método criada; próxima fase é a 0 (descobrir a intenção) com `superpowers:brainstorming`.
+
+**2026-11-22 · Fase 0 e requisitos (Lead, Claude Code)**
+
+- **Entendimento confirmado:** a landing vende **sites e landing pages sob medida**, para empresas de qualquer setor (sem nicho); objetivo principal é vender; reforça a identidade com animações extravagantes e inovação, e a própria página é a prova do produto.
+- **Decisões da pessoa:** desenho no **Penpot** (no lugar do Figma do método); estrutura de nove seções aprovada ("pode seguir"), descrita em `processo/requisitos.md` (R-01 a R-11); a pessoa aprova e valida seção por seção. **Formulário fora por enquanto:** a pessoa está alterando o formulário da Floway; o destino do botão final fica em aberto.
+- **Referências:** a pessoa não indicou outras; a Lead usa o site oficial e a identidade como referência (chamada da Lead, a conferir).
+- **Penpot:** servidor MCP copiado do projeto do site oficial para o escopo local deste projeto (fora do repositório); as ferramentas só carregam numa sessão nova.
+- **Onde parou:** requisitos escritos; próximo passo é a identidade no Penpot (tokens da Floway) e o desenho do hero, celular primeiro.
