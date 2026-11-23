@@ -1,0 +1,115 @@
+/* Cabeçalho fixo logo abaixo da faixa (as alturas vêm de src/secoes/faixa/estilo.css). Mobile-first. */
+.cabecalho {
+  position: fixed;
+  top: var(--altura-faixa);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--espaco-2) + var(--espaco-1));
+  height: var(--altura-cabecalho);
+  padding: 0 var(--margem-da-pagina);
+  background: var(--cor-fundo);
+}
+
+.cabecalho a:focus-visible, .menu__botao:focus-visible {
+  outline: 2px solid var(--cor-azul);
+  outline-offset: 3px;
+}
+
+.cabecalho__logo { margin-right: auto; }
+.cabecalho__logo img { width: 104px; height: auto; }
+
+.cabecalho__links { display: none; }
+
+.cabecalho__contato {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  height: 40px;
+  padding: 0 var(--espaco-4);
+  border-radius: var(--raio-botao);
+  background: var(--cor-preto);
+  color: var(--cor-claro);
+  font: 500 14px/1 var(--fonte-sans);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: background-color var(--tempo-rapido) ease;
+}
+.cabecalho__contato > span { display: none; }
+.cabecalho__contato:hover { background: var(--cor-azul); }
+
+/* Menu do celular: botão de contorno com dois traços; o painel abre por cima da página, sem empurrá-la. */
+.menu__botao {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--cor-preto);
+  border-radius: var(--raio-botao);
+  background: transparent;
+  color: var(--cor-preto);
+  cursor: pointer;
+}
+.menu__tracos, .menu__tracos::before {
+  display: block;
+  width: 18px;
+  height: 6px;
+  border-top: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transition: transform var(--tempo-rapido) ease;
+}
+.menu__tracos::before { content: none; }
+.menu__botao[aria-expanded="true"] .menu__tracos { transform: scaleY(0.5); }
+
+.menu__painel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: var(--espaco-2) var(--margem-da-pagina) var(--espaco-4);
+  border-top: 1px solid var(--cor-cinza-claro);
+  border-bottom: 1px solid var(--cor-cinza-claro);
+  background: var(--cor-fundo);
+}
+.menu__painel a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  border-bottom: 1px solid var(--cor-cinza-claro);
+  font: 500 12px/1 var(--fonte-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 900px) {
+  .cabecalho {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--espaco-4);
+  }
+  .cabecalho__logo img { width: 124px; }
+  .cabecalho__links { display: block; }
+  .cabecalho__links ul { display: flex; gap: calc(var(--espaco-5) - var(--espaco-1)); }
+  .cabecalho__links a {
+    font: 500 12px/1 var(--fonte-mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color var(--tempo-rapido) ease;
+  }
+  .cabecalho__links a:hover { color: var(--cor-azul); }
+  .cabecalho__contato {
+    justify-self: end;
+    height: 44px;
+    padding: 0 calc(var(--espaco-4) + var(--espaco-1));
+    font-size: 16px;
+  }
+  .cabecalho__contato > span { display: inline; }
+  .menu { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cabecalho__contato, .menu__tracos, .cabecalho__links a { transition: none; }
+}
