@@ -100,3 +100,9 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 - **Todas as telas da leva 1 estão aprovadas e registradas** (hero, hero Black Friday, Incluso, Conceitos, Perguntas, Chamada final).
 - **Onde parou:** próxima fase é a spec e o plano para construir a leva 1 antes de 27/11 (`superpowers:writing-plans`). Pendências da pessoa: destino dos botões (formulário da Floway) e o texto do depois de 27/11.
 
+
+**2026-11-23 · Spec da leva 1 (Lead, Claude Code)**
+
+- **Decisão da pessoa:** construir com a mesma base do site oficial (Next.js estático, React, three.js, efeitos copiados e adaptados de `sitesFlowway`), "1. pode seguir".
+- **Escrito:** spec em `processo/specs/2026-11-23-leva-1.md` e mapa de riscos em `processo/seguranca.md`, esperando a aprovação da pessoa. Chamadas da Lead a confirmar: cortes do Incluso depois do fim da oferta; destino provisório `#comecar` que bloqueia a publicação.
+- **Onde parou:** depois da aprovação da spec, o plano (`superpowers:writing-plans`) e a escolha do modo de execução.
