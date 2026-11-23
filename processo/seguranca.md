@@ -26,6 +26,15 @@ Mapa de riscos da Fase 2, no modo de orientação da `security-audit` (sem códi
 | CI com permissões demais | o `ci.yml` já usa `permissions: contents: read`; nenhum segredo no CI na leva 1 |
 | Relógio manipulado mostrar a oferta | risco aceito (R-12): sem efeito de segurança, a oferta é só texto |
 
+## Notas das revisões
+
+- **2026-11-23 · PR #17 (base), revisão do Security, modo de orientação: aprovar com notas.** `npm audit --omit=dev` acusa 4 altos e 1 moderado na contagem do npm. Pelo impacto demonstrado:
+  - **baixo:** `@14islands/r3f-scroll-rig` 8.15.0 usa `query-string` 6.14.1 → `decode-uri-component` ≤ 0.5.0 (GHSA-vcc3-ghjq-m6fr, GHSA-qr28-fpjm-wq7f). Um link com uma query montada pode travar só a aba de quem clica, sem dado nem efeito que dure. A correção do npm é uma versão maior da lib (inviável no prazo). Fica como nota; um `override` com versão corrigida está "a validar". `?debug` liga o modo de depuração da lib, sem expor segredo (informativo).
+  - **nota:** next 15.5.28 tem 3 avisos moderados (otimização de imagem, Edge runtime, servidor próprio) que não se aplicam a `output: 'export'` com `images.unoptimized`; o postcss interno só roda no build, sobre o nosso CSS. Mantidas as versões do site oficial (decisão da Lead).
+  - **nota (só desenvolvimento):** vitest 3.2.7 e dependências têm avisos críticos; só rodam no teste e no CI, nunca no HTML.
+  - **endurecimento para depois:** as actions do CI estão fixadas por tag (`@v4`), não por SHA.
+- Regra para a validação: `npm audit --omit=dev` que falha é triado pelo impacto demonstrado (tabela da skill `metodo:auditoria-de-seguranca`); `confirmed` crítico ou alto bloqueia, o resto vira nota aqui.
+
 ## Auditorias
 
 - Nenhuma ainda. Site estático sem login nem formulário: na Fase 7, a Lead propõe à pessoa o checklist e a busca de segredos no lugar da auditoria completa.
