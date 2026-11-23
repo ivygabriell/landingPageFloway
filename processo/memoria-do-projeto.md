@@ -93,3 +93,10 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 - **Decisões da pessoa:** Perguntas (R-09) aprovadas com as cinco respostas; o clique nos conceitos abre os sites dos conceitos como no site oficial; "Medição" e "Animação e 3D" saem da faixa de benefícios do hero; as capas dos conceitos ficam como estão.
 - **Onde parou:** falta desenhar a Chamada final (R-10); depois, spec e plano para construir a leva 1 antes de 27/11.
 - **Pendência da pessoa:** o que a página diz depois de 27/11 23h59 (respostas sem a oferta para as perguntas 1 a 3, título da chamada final, Incluso sem preço). Até lá, a Lead decidiu esconder no navegador e tirar na publicação de 28/11.
+
+**2026-11-23 · Chamada final aprovada (Lead, Claude Code)**
+
+- **Aprovado pela pessoa ("aprovado pode seguir"):** Chamada final (R-10) com a esfera de partículas que forma o F, a condição da oferta, a contagem e o rodapé (logo, descritor, © 2026, sem e-mail nem telefone). Depois do fim da oferta, o título fica "Seu site novo.".
+- **Todas as telas da leva 1 estão aprovadas e registradas** (hero, hero Black Friday, Incluso, Conceitos, Perguntas, Chamada final).
+- **Onde parou:** próxima fase é a spec e o plano para construir a leva 1 antes de 27/11 (`superpowers:writing-plans`). Pendências da pessoa: destino dos botões (formulário da Floway) e o texto do depois de 27/11.
+

@@ -148,7 +148,8 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 - **Critérios de aceite:**
   - [ ] o botão segue a captura aprovada da seção em `processo/telas/` (posição, tamanho e cor)
 - **Dependências:** R-01; destino do botão: o formulário da Floway, que a pessoa está terminando (decisão de 2026-11-22: esperar o formulário, sem alternativa); precisa estar pronto antes da publicação de 27/11.
-- **Telas:** `Chamada final · celular`, `Chamada final · desktop`.
+- **Telas:** `Chamada final · celular`, `Chamada final · desktop` (Penpot), aprovadas em 2026-11-23, registro em `processo/telas/`. Textos aprovados: selo "(05) Próximo passo"; título "Seu site *novo*. Em até 3 dias. Por R$ 997." ("novo" em Instrument Serif itálico); condição "Site de ~~R$ 4.997~~ por R$ 997, entregue em até 3 dias, para projetos fechados até 27/11 às 23h59."; "A condição termina em" com a contagem; botão "Iniciar um projeto →"; rodapé com logo, "Sites, landing pages e automações" e "© 2026 Floway".
+- **Depois de 27/11/2026 23h59 (UTC−3):** somem o preço, a condição e a contagem; o título fica só "Seu site novo." até a pessoa definir o depois (pendência já anotada em R-09).
 - **Peso:** valor alto (é a conversão); esforço G (esfera); risco médio (destino pendente).
 - **Prioridade proposta:** 7 (leva 1), desenhada junto do hero porque repete a linguagem dele.
 - **Fora do escopo:** o formulário em si.
