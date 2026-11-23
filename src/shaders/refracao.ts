@@ -51,7 +51,9 @@ void main() {
   float brilho = pow(max(dot(reflect(-luz, vNormal), -vVisao), 0.0), 24.0);
 
   // O fresnel clareia as bordas e as escurece; a tinta dá corpo ao vidro, para o F se ler sobre o fundo claro.
-  vec3 vidro = mix(base, vec3(1.0), uVeu + fresnel * 0.15) * (1.0 - fresnel * 0.5) * (1.0 - uTinta) + brilho * 0.5 * uForca;
+  // O véu mistura em sRGB, como o branco translúcido do CSS: em linear, 16 % de branco clareava o preto até o cinza médio.
+  vec3 baseSrgb = pow(max(base, 0.0), vec3(1.0 / 2.2));
+  vec3 vidro = pow(mix(baseSrgb, vec3(1.0), uVeu + fresnel * 0.15), vec3(2.2)) * (1.0 - fresnel * 0.5) * (1.0 - uTinta) + brilho * 0.5 * uForca;
   gl_FragColor = vec4(vidro, uOpacidade * (0.97 + fresnel * 0.03));
   #include <colorspace_fragment>
 }

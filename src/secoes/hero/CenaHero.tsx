@@ -22,8 +22,9 @@ import { criarLamina } from './laminas';
 const ROTACAO = THREE.MathUtils.degToRad(8);
 // Sombra das lâminas na captura: 0 18px 40px no desktop e 0 8px 18px no celular, preto a 8 %.
 const SOMBRA = { desktop: { y: 18, desfoque: 40 }, celular: { y: 8, desfoque: 18 }, alfa: 0.08 };
-// Vidro da captura: papel a 16 % por cima e desfoque de fundo de 10 px (6 no celular); passo, em px entre as 9 amostras.
-const VIDRO = { veu: 0.16, forca: 0.3, passo: { desktop: 2.2, celular: 1.3 } };
+// Vidro da captura: papel a 16 % por cima e a palavra nítida atrás (o mesmo desfoque leve do CSS); passo, em px entre
+// as 9 amostras do borrão.
+const VIDRO = { veu: 0.16, forca: 0.3, passo: { desktop: 0.5, celular: 0.25 } };
 
 const corDoToken = (nome: string) => new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue(nome).trim());
 
