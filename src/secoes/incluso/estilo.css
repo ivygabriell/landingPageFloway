@@ -1,0 +1,241 @@
+/* Incluso (R-05, R-12): o único trecho escuro da página. Linhas #3A3A3A (exceção registrada em design-system.md).
+   Mobile-first; desktop a partir de 900 px. Movimento só com transform e opacity. */
+.incluso {
+  position: relative;
+  overflow: clip;
+  display: grid;
+  row-gap: var(--espaco-5);
+  padding: var(--espaco-6) var(--margem-da-pagina) var(--espaco-6);
+  background: var(--cor-preto);
+  color: var(--cor-claro);
+}
+
+/* O véu claro que some ao entrar: a página "escurece". Só existe com JavaScript e fora do reduzido (Movimento.tsx). */
+.incluso__veu {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--cor-fundo);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.incluso a:focus-visible {
+  outline: 2px solid var(--cor-azul-no-escuro);
+  outline-offset: 3px;
+}
+
+/* Selos */
+.incluso__selo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  font: 500 11px/1 var(--fonte-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.incluso__ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cor-azul-no-escuro);
+}
+.incluso__selo-texto { margin-left: var(--espaco-3); }
+
+.incluso__black-friday {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--espaco-3);
+  border-radius: var(--raio-botao);
+  background: var(--cor-azul);
+  color: var(--cor-papel);
+  font: 700 11px/1 var(--fonte-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Coluna da oferta: o preço acompanha a largura da coluna (container query). */
+.incluso__oferta {
+  container-type: inline-size;
+  display: grid;
+  row-gap: var(--espaco-4);
+  align-content: start;
+}
+
+.incluso__preco { margin-top: var(--espaco-3); }
+.incluso__ancora {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-3);
+  font: 500 28px/1 var(--fonte-sans);
+  letter-spacing: -0.03em;
+}
+.incluso__ancora s { color: var(--cor-cinza-claro); text-decoration-thickness: 2px; }
+.incluso__desconto {
+  padding: var(--espaco-1) var(--espaco-3);
+  border-radius: var(--raio-botao);
+  background: var(--cor-azul-no-escuro);
+  color: var(--cor-preto);
+  font-weight: 700;
+  font-size: 0.6em;
+  letter-spacing: 0;
+}
+.incluso__por { font: italic 400 1.1em/1 var(--fonte-serif); letter-spacing: 0; }
+
+/* O preço grande com a cópia azul atrás e as fatias do glitch (invisíveis fora do tremor). */
+.incluso__valor {
+  position: relative;
+  isolation: isolate;
+  width: max-content;
+  margin-top: var(--espaco-3);
+  font: 800 min(30cqi, 260px)/0.86 var(--fonte-sans);
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+.incluso__copia, .incluso__fatia {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.incluso__copia {
+  z-index: -1;
+  color: var(--cor-azul-no-escuro);
+  transform: translate(-0.025em, 0.015em);
+}
+.incluso__fatia { opacity: 0; color: var(--cor-claro); }
+.incluso__fatia--alta { clip-path: inset(24% 0 60% 0); color: var(--cor-azul-no-escuro); }
+.incluso__fatia--baixa { clip-path: inset(62% 0 22% 0); }
+
+/* O tremor: entra ao chegar na seção e se repete a cada 6 s (o primeiro segundo de cada ciclo). */
+.incluso--tremendo .incluso__fatia { animation: incluso-fatia 6s steps(1, end) infinite; }
+.incluso--tremendo .incluso__fatia--baixa { animation-delay: var(--intervalo-curto); }
+.incluso--tremendo .incluso__copia { animation: incluso-copia 6s steps(1, end) infinite; }
+@keyframes incluso-fatia {
+  0% { opacity: 1; transform: translateX(-4%); }
+  4% { opacity: 1; transform: translateX(5%); }
+  8% { opacity: 1; transform: translateX(-2%); }
+  12% { opacity: 1; transform: translateX(3%); }
+  16%, 100% { opacity: 0; transform: none; }
+}
+@keyframes incluso-copia {
+  0% { transform: translate(-0.06em, 0.02em); }
+  6% { transform: translate(0.03em, -0.01em); }
+  12% { transform: translate(-0.04em, 0.03em); }
+  16%, 100% { transform: translate(-0.025em, 0.015em); }
+}
+
+.incluso__titulo {
+  font: 600 31px/1.08 var(--fonte-sans);
+  letter-spacing: -0.04em;
+}
+.incluso__titulo em { font: italic 400 1.06em/1 var(--fonte-serif); letter-spacing: -0.01em; }
+.incluso__apoio {
+  max-width: 34em;
+  color: var(--cor-cinza-claro);
+  font: 400 16px/1.5 var(--fonte-sans);
+  letter-spacing: -0.01em;
+}
+
+/* Coluna da compra: contagem, lista, botão e condição. */
+.incluso__compra {
+  display: grid;
+  row-gap: var(--espaco-5);
+  align-content: start;
+}
+.incluso__rotulo, .incluso__lista-titulo {
+  margin-bottom: var(--espaco-3);
+  font: 500 11px/1 var(--fonte-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.incluso__caixas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--espaco-2);
+  margin: 0;
+  padding: 0;
+}
+.incluso__caixa {
+  display: grid;
+  row-gap: var(--espaco-2);
+  padding: var(--espaco-3) calc(var(--espaco-2) + var(--espaco-1));
+  border: 1px solid #3A3A3A;
+  border-radius: 10px;
+}
+.incluso__numero { font: 700 34px/1 var(--fonte-sans); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.incluso__unidade { font: 500 10px/1 var(--fonte-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--cor-cinza-claro); }
+
+.incluso__lista { border-bottom: 1px solid #3A3A3A; }
+.incluso__lista li {
+  display: flex;
+  gap: var(--espaco-3);
+  padding: var(--espaco-3) 0;
+  border-top: 1px solid #3A3A3A;
+  font: 500 17px/1.3 var(--fonte-sans);
+  letter-spacing: -0.02em;
+}
+/* O ✓ é decoração (texto alternativo vazio): o leitor de tela lê só o item. */
+.incluso__lista li::before {
+  content: "✓" / "";
+  flex: none;
+  width: var(--espaco-4);
+  color: var(--cor-azul-no-escuro);
+  font-weight: 300;
+  transition: opacity var(--tempo-curto) ease, transform var(--tempo-curto) var(--curva-hover);
+  transition-delay: calc(var(--i, 0) * var(--intervalo-seguir));
+}
+.incluso--animado .incluso__lista li:not(.incluso__item--marcado)::before { opacity: 0; transform: scale(0.4); }
+
+.incluso__botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--espaco-2) + var(--espaco-1));
+  height: 60px;
+  border-radius: var(--raio-botao);
+  background: var(--cor-claro);
+  color: var(--cor-preto);
+  font: 500 18px/1 var(--fonte-sans);
+  letter-spacing: -0.02em;
+  transition: transform var(--tempo-hover) var(--curva-hover);
+}
+.incluso__seta { transition: transform var(--tempo-hover) var(--curva-hover); }
+/* Hover (só onde há mouse) e foco pelo teclado: o mesmo estado. */
+.incluso__botao:focus-visible { transform: scale(1.02); }
+.incluso__botao:focus-visible .incluso__seta { transform: translateX(var(--espaco-1)); }
+@media (hover: hover) {
+  .incluso__botao:hover { transform: scale(1.02); }
+  .incluso__botao:hover .incluso__seta { transform: translateX(var(--espaco-1)); }
+}
+.incluso__condicao {
+  margin-top: var(--espaco-3);
+  color: var(--cor-cinza-claro);
+  font: 400 13px/1.5 var(--fonte-sans);
+}
+
+@media (min-width: 900px) {
+  .incluso {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 40%);
+    column-gap: var(--espaco-7);
+    row-gap: var(--espaco-5);
+    padding: var(--espaco-7) var(--margem-da-pagina);
+  }
+  .incluso__selo { grid-column: 1 / -1; font-size: 12px; }
+  .incluso__ancora { font-size: 40px; }
+  .incluso__titulo { font-size: 48px; }
+  .incluso__apoio { font-size: 18px; }
+  .incluso__numero { font-size: 52px; }
+  .incluso__caixa { padding: var(--espaco-3) var(--espaco-4); row-gap: var(--espaco-3); }
+  .incluso__lista li { font-size: 21px; padding: calc(var(--espaco-3) - 2px) 0; }
+  .incluso__botao { height: 68px; font-size: 19px; }
+}
+
+/* Movimento reduzido: tudo parado e visível. */
+@media (prefers-reduced-motion: reduce) {
+  .incluso__veu { display: none; }
+  .incluso__fatia, .incluso__copia { animation: none !important; }
+  .incluso__lista li::before { opacity: 1 !important; transform: none !important; }
+}
