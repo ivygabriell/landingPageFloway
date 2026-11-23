@@ -76,3 +76,25 @@ test('movimento reduzido: modo-reduzido, nenhum canvas e o three não é baixado
   expect(await comThree()).toEqual([]);
   await expect(page.locator('canvas')).toHaveCount(0);
 });
+
+test('as fontes são do próprio site: nada do Google e as três famílias carregam', async ({ page }) => {
+  const doGoogle: string[] = [];
+  page.on('request', (r) => {
+    if (/fonts\.(googleapis|gstatic)\.com/.test(r.url())) doGoogle.push(r.url());
+  });
+  await page.goto('/');
+  await page.evaluate(() => document.fonts.ready);
+  const carregadas = await page.evaluate(async () => {
+    const raiz = getComputedStyle(document.documentElement);
+    const familia = (v: string) => raiz.getPropertyValue(v).split(',')[0].trim();
+    const pedidos = [
+      `400 16px ${familia('--fonte-sans')}`,
+      `500 16px ${familia('--fonte-mono')}`,
+      `italic 400 16px ${familia('--fonte-serif')}`,
+    ];
+    // load() baixa a face pedida mesmo se a página ainda não a usou; check() confirma que está pronta.
+    return Promise.all(pedidos.map(async (p) => (await document.fonts.load(p)).length > 0 && document.fonts.check(p)));
+  });
+  expect(carregadas).toEqual([true, true, true]);
+  expect(doGoogle).toEqual([]);
+});
