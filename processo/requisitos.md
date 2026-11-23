@@ -36,7 +36,7 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 ## R-02 · Cabeçalho com o botão de contato sempre à mão
 
 - **História:** como visitante decidido no meio da página, quero pedir um projeto sem voltar ao topo.
-- **Regras de negócio:** logo da Floway (arquivos de `assets/brand/` da identidade), links para as seções e o botão "Iniciar um projeto" sempre visível; no celular, menu recolhido com o botão fora dele.
+- **Regras de negócio:** logo da Floway (arquivos de `assets/brand/` da identidade), links para as seções (na leva 1, só Incluso, Conceitos e Perguntas; decisão da pessoa em 2026-11-22) e o botão "Iniciar um projeto" sempre visível; no celular, menu recolhido com o botão fora dele.
 - **Casos de erro:** o cabeçalho nunca cobre o título de uma seção ao navegar pelos links.
 - **Critérios de aceite:**
   - [ ] o botão fica visível em qualquer ponto da rolagem, no celular e no desktop
@@ -76,12 +76,12 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 ## R-05 · O que está incluso
 
 - **História:** como comprador, quero saber exatamente o que recebo, para comparar com outras opções.
-- **Regras de negócio:** estratégia e estrutura, texto que vende, design sob medida, animação e 3D, site rápido e no Google, medição; cartões que se encaixam como peças na rolagem.
+- **Regras de negócio:** é o único trecho escuro da página e o bloco de venda da oferta (R-12): preço com âncora ("De R$ 4.997" riscado, −80%, "por R$ 997"), título "Um site completo. Do jeito que você quer. Em até 3 dias.", a contagem em caixas, a lista "Tudo isso por R$ 997" (estrutura pensada para vender; texto que convence; design sob medida, celular e computador; animações com a assinatura Floway; rápido e pronto para o Google; botão, formulário e WhatsApp funcionando) e o botão "Quero meu site por R$ 997". Itens e textos aprovados pela pessoa em 2026-11-22.
 - **Casos de erro:** preço e prazo só os da oferta de R-12, enquanto ela valer; nenhum outro preço ou prazo.
 - **Critérios de aceite:**
   - [ ] cada item tem título e uma frase; nenhum destes termos aparece sem uma frase que o explique: SEO, WebGL, 3D, CRM, conversão
 - **Dependências:** R-11.
-- **Telas:** `Incluso · celular`, `Incluso · desktop`.
+- **Telas:** `Incluso · celular`, `Incluso · desktop` (Penpot), registro em `processo/telas/`.
 - **Peso:** valor alto; esforço M; risco baixo.
 - **Prioridade proposta:** 4 (leva 1).
 - **Fora do escopo:** tabela de preços (o único preço é o da oferta de R-12).
@@ -146,7 +146,7 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 - **Casos de erro:** sem WebGL ou com movimento reduzido, o "F" aparece estático.
 - **Critérios de aceite:**
   - [ ] o botão segue a captura aprovada da seção em `processo/telas/` (posição, tamanho e cor)
-- **Dependências:** R-01; destino do botão (pessoa) — sem ele a leva 1 não converte, então precisa estar definido antes da publicação de 27/11.
+- **Dependências:** R-01; destino do botão: o formulário da Floway, que a pessoa está terminando (decisão de 2026-11-22: esperar o formulário, sem alternativa); precisa estar pronto antes da publicação de 27/11.
 - **Telas:** `Chamada final · celular`, `Chamada final · desktop`.
 - **Peso:** valor alto (é a conversão); esforço G (esfera); risco médio (destino pendente).
 - **Prioridade proposta:** 7 (leva 1), desenhada junto do hero porque repete a linguagem dele.
@@ -166,8 +166,8 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 ## R-12 · Urgência da Black Friday
 
 - **História:** como empresa que está pensando em ter um site, quero saber que existe uma condição que acaba logo, para decidir agora.
-- **Regras de negócio:** a oferta, definida pela pessoa em 2026-11-22: **site por R$ 997, entregue em até 3 dias, para projetos fechados até 27/11/2026 às 23h59** (horário de Brasília). Faixa fixa no topo com a oferta e a contagem regressiva até esse momento; selo "Black Friday" e a linha da condição no hero; a chamada final repete a condição. A contagem é real, calculada do relógio do visitante contra o fim em horário de Brasília (risco aceito: relógio errado no aparelho do visitante mostra a contagem errada); nada de contagem que reinicia. **Fim exato (chamada da Lead, a confirmar):** a oferta vale até 27/11/2026 23h59min59s (UTC−3) e some a partir de 28/11/2026 00h00min00s. A contagem arredonda para cima, para nunca mostrar zero enquanto vale.
-- **Textos exatos:** faixa no desktop "Black Friday · Site por R$ 997, entregue em até 3 dias · até 27/11 às 23h59"; faixa no celular "Black Friday · Site por R$ 997"; linha do hero e chamada final "Site por R$ 997, entregue em até 3 dias, para projetos fechados até 27/11 às 23h59."; cartão da oferta (R-05) "R$ 997 · Site completo, entregue em até 3 dias. Para projetos fechados até 27/11 às 23h59."
+- **Regras de negócio:** a oferta, definida pela pessoa em 2026-11-22: **site de R$ 4.997 por R$ 997** (R$ 4.997 é o preço real cobrado hoje, confirmado pela pessoa), **um site do tipo que o cliente quiser** (landing page, institucional ou outro), **entregue em até 3 dias contados a partir do fechamento do material com o cliente**, para projetos fechados até 27/11/2026 às 23h59 (horário de Brasília). O desconto mostrado é −80% (997 sobre 4.997). Faixa fixa no topo com a oferta e a contagem regressiva até esse momento; selo "Black Friday" e a linha da condição no hero; a chamada final repete a condição. A contagem é real, calculada do relógio do visitante contra o fim em horário de Brasília (risco aceito: relógio errado no aparelho do visitante mostra a contagem errada); nada de contagem que reinicia. **Fim exato (chamada da Lead, a confirmar):** a oferta vale até 27/11/2026 23h59min59s (UTC−3) e some a partir de 28/11/2026 00h00min00s. A contagem arredonda para cima, para nunca mostrar zero enquanto vale.
+- **Textos exatos** (o "R$ 4.997" sempre riscado): faixa no desktop "Black Friday · Site de R$ 4.997 por R$ 997, entregue em até 3 dias · até 27/11 às 23h59"; faixa no celular "De R$ 4.997 por R$ 997"; linha do hero no desktop "De R$ 4.997 por R$ 997 · entrega em até 3 dias · até 27/11 às 23h59."; linha do hero no celular "Site de R$ 4.997 por R$ 997, entregue em até 3 dias, para projetos fechados até 27/11 às 23h59."; Incluso (R-05) "De R$ 4.997 −80% por R$ 997 · Um site completo. Do jeito que você quer. Em até 3 dias." e "Para projetos fechados até 27/11 às 23h59. Os 3 dias contam a partir do fechamento do material com você."; chamada final (R-10) a definir no desenho dela, com os mesmos valores.
 - **Casos de erro:** depois do fim, a faixa, o selo e a linha da condição somem e o hero volta à versão aprovada sem a oferta (nunca "00d 00h 00m" parado na tela); sem JavaScript, a faixa mostra os mesmos textos sem a contagem (a data já está no texto); como o site é estático, uma publicação em 28/11 a partir de 00h00 tira a oferta do HTML (tarefa de publicação, aprovada pela pessoa como as outras).
 - **Critérios de aceite:**
   - [ ] com o relógio em 27/11/2026 23h58min30s (UTC−3), a contagem mostra 2 minutos no celular ("00d 00h 02m") e 1 min 30 s no desktop; em 28/11/2026 00h00min00s, a oferta não aparece
@@ -177,5 +177,4 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 - **Telas:** `Hero · celular · Black Friday`, `Hero · desktop · Black Friday` (Penpot), registro em `processo/telas/`.
 - **Peso:** valor alto (urgência da campanha); esforço M; risco médio (fuso horário e oferta que precisa sumir na hora certa).
 - **Prioridade proposta:** 3, logo depois do hero e do cabeçalho.
-- **Pendente da pessoa:** o que os R$ 997 cobrem (quantas páginas, se vale para landing page e para site, quais itens de R-05) e quando começam os 3 dias.
 - **Fora do escopo:** limite de vagas (a pessoa não definiu); cupom ou pagamento na página.
