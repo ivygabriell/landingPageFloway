@@ -19,3 +19,5 @@ Catálogo do que existe no Penpot (conjunto de tokens `Floway`, cores da bibliot
 | Palavra FLOWAY | cópia azul (glitch), fatias deslocadas | entrada, rolagem, reduzido (estática) | Inter Tight 800, caixa-alta, espaçamento −0,055 em, largura das margens |
 | Lâmina de vidro | — | inclinada −8°, desfoque de fundo 6–10, papel 16 %, contorno papel 90 % | celular 74×200, desktop 168×380 |
 | Faixa de benefícios | — | rolando; parada no reduzido | 52 de altura, linha `cor.cinza-claro` no topo, Azeret Mono 11 |
+| Faixa de urgência | celular (oferta curta + dias, horas, minutos), desktop (oferta completa + segundos) | contando; some ao zerar | 36/40 de altura, `cor.preto`, Azeret Mono 10–11 `cor.claro`, ponto `cor.azul-no-escuro` |
+| Selo Black Friday | — | só durante a oferta | pílula `cor.azul`, Azeret Mono 700 11 `cor.papel`, 22 de altura |

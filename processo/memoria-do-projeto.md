@@ -62,3 +62,8 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 - **Aprovado pela pessoa:** hero com cabeçalho (R-01, R-02), celular e desktop, registrados em `processo/telas/` com os tokens do Penpot. Desenho feito pela Lead no Penpot via MCP (servidor do projeto, chamado por HTTP porque as ferramentas não carregaram nesta sessão).
 - **Pedido novo da pessoa:** garantir o **senso de urgência da Black Friday**. Muda o que será construído; falta a pessoa dizer a oferta real (o que, quanto, até quando), porque nada pode ser inventado.
 - **Atenção:** o arquivo `New File 4` do Penpot também tem, na página 1, um desenho do site oficial; não foi tocado.
+
+**2026-11-22 · Black Friday (Lead, Claude Code)**
+
+- **Oferta da pessoa:** site por **R$ 997**, entregue em **até 3 dias**, para projetos fechados até **27/11/2026 às 23h59**. Na página: faixa de urgência fixa com contagem regressiva real, selo e linha de condição no hero (aprovado em 2026-11-22). Ao zerar, faixa e selo somem e o hero volta à versão aprovada sem a oferta.
+- **Prazo:** a página precisa estar no ar antes de 27/11. A pessoa aprovou a **versão enxuta** (hero, incluso, conceitos, perguntas, chamada final); dor, virada, processo e "por que a Floway" ficam para a segunda leva.
