@@ -89,13 +89,14 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 ## R-06 · Conceitos (prova)
 
 - **História:** como comprador desconfiado, quero ver trabalhos da Floway, para acreditar na qualidade.
-- **Regras de negócio:** galeria horizontal com capa revelada no hover (no celular, sem hover, a capa aparece por padrão); todo trabalho sem cliente leva o rótulo "Conceito"; nenhum cliente ou resultado inventado.
+- **Regras de negócio:** título "Veja do que somos capazes." e apoio "Sites criados pela Floway para mostrar o nosso nível. O seu pode ser o próximo." (a pessoa pediu para não citar clientes fictícios no texto); os cinco conceitos do site oficial (Ferramenta criativa, Companhia aérea, Banco digital, Estúdio de marca, Plataforma de deploy), com as capas de `sitesFlowway`, o setor e o tipo de site; galeria horizontal com a capa sempre visível e "Abrir o site ↗" no hover; botão "Quero um site assim"; sem indicador de progresso (tirado pela pessoa). Todo cartão leva o selo "Conceito" (regra da marca; nenhum cliente ou resultado inventado).
 - **Casos de erro:** imagem que não carrega mostra a cor de fundo e o nome do conceito.
 - **Critérios de aceite:**
   - [ ] todo cartão sem cliente mostra "Conceito"
   - [ ] a galeria funciona pelo teclado
 - **Dependências:** R-11; quais conceitos entram é decisão da pessoa.
-- **Telas:** `Conceitos · celular`, `Conceitos · desktop`.
+- **Telas:** `Conceitos · celular`, `Conceitos · desktop` (Penpot), aprovadas em 2026-11-23, registro em `processo/telas/`.
+- **Pendente da pessoa:** o destino do clique em cada conceito (proposta: a página do conceito no site oficial, em aba nova).
 - **Peso:** valor alto (prova); esforço M; risco médio (direitos e marcas fictícias, INPI).
 - **Prioridade proposta:** 5 (leva 1).
 - **Fora do escopo:** página de case.
