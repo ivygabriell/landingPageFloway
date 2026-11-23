@@ -19,7 +19,8 @@ concurrency:
 jobs:
   verify:
     name: Testes, tipos e build
-    runs-on: ubuntu-latest
+    # shortcut: fixo porque o Playwright 1.56 não instala o Chromium no ubuntu-latest (26.04), como no site oficial; trocar ao atualizar o Playwright
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -43,6 +44,8 @@ jobs:
       - run: npm test
         if: steps.stack.outputs.definida == 'sim'
       - run: npm run check
+        if: steps.stack.outputs.definida == 'sim'
+      - run: npx playwright install --with-deps chromium
         if: steps.stack.outputs.definida == 'sim'
       - run: npm run test:build
         if: steps.stack.outputs.definida == 'sim'

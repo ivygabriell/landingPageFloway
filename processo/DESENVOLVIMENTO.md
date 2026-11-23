@@ -40,10 +40,10 @@ Uma decisão é da pessoa quando aciona pelo menos um gatilho: muda **o que** se
 
 ## Comandos do projeto
 
-- Testes: (preencha)
-- Tipos / lint: (preencha)
-- Build: (preencha)
-- Servidor local: (preencha)
+- Testes: `npm test` (Vitest, `tests/unit/`); build com e2e: `npm run test:build` (build com `OFERTA_AGORA=2026-11-25T15:00:00Z` e Playwright sobre `out/`; fora do CI usa o Chrome da máquina; `PORTA_E2E=31xx` troca a porta 3100 quando outra worktree está testando); trava da publicação: `npm run test:publicacao` (falha até a pessoa dar o destino dos botões)
+- Tipos / lint: `npm run check`
+- Build: `npm run build` (exportação estática em `out/`; `OFERTA_AGORA=<ISO>` simula o instante do build)
+- Servidor local: `npx next dev`
 
 ## Tarefas e sessões
 
