@@ -63,6 +63,16 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 - **Decisões da pessoa:** desenho no **Penpot** (no lugar do Figma do método); estrutura de nove seções aprovada ("pode seguir"), descrita em `processo/requisitos.md` (R-01 a R-11); a pessoa aprova e valida seção por seção. **Formulário fora por enquanto:** a pessoa está alterando o formulário da Floway; o destino do botão final fica em aberto.
 - **Referências:** a pessoa não indicou outras; a Lead usa o site oficial e a identidade como referência (chamada da Lead, a conferir).
 - **Penpot:** servidor MCP copiado do projeto do site oficial para o escopo local deste projeto (fora do repositório); as ferramentas só carregam numa sessão nova.
-- **Onde parou:** requisitos escritos; próximo passo é a identidade no Penpot (tokens da Floway) e o desenho do hero, celular primeiro.
 
+**2026-11-22 · Hero aprovado (Lead, Claude Code)**
+
+- **Aprovado pela pessoa:** hero com cabeçalho (R-01, R-02), celular e desktop, registrados em `processo/telas/` com os tokens do Penpot. Desenho feito pela Lead no Penpot via MCP (servidor do projeto, chamado por HTTP porque as ferramentas não carregaram nesta sessão).
+- **Pedido novo da pessoa:** garantir o **senso de urgência da Black Friday**. Muda o que será construído; falta a pessoa dizer a oferta real (o que, quanto, até quando), porque nada pode ser inventado.
+- **Atenção:** o arquivo `New File 4` do Penpot também tem, na página 1, um desenho do site oficial; não foi tocado.
+
+**2026-11-22 · Black Friday (Lead, Claude Code)**
+
+- **Oferta da pessoa:** site por **R$ 997**, entregue em **até 3 dias**, para projetos fechados até **27/11/2026 às 23h59**. Na página: faixa de urgência fixa com contagem regressiva real, selo e linha de condição no hero (aprovado em 2026-11-22). Ao zerar, faixa e selo somem e o hero volta à versão aprovada sem a oferta.
+- **Prazo:** a página precisa estar no ar antes de 27/11. A pessoa aprovou a **versão enxuta** (hero, incluso, conceitos, perguntas, chamada final); dor, virada, processo e "por que a Floway" ficam para a segunda leva.
 - **Ferramenta (2026-11-22):** a pessoa decidiu "não utilize o codex, somente o claude". Todos os papéis no Claude Code; a revisão cruzada vira revisão com contexto limpo por outra sessão do Claude Code no Orca. A revisão do Codex dos PRs #1 e #2 tinha parado no limite de uso do Codex e foi encerrada (`worker-stop`).
+- **Onde parou (2026-11-22):** PR #1 (requisitos R-01 a R-12, leva 1, só Claude Code) integrado; hero e hero Black Friday registrados neste PR; seção Incluso (R-05) desenhada no Penpot, esperando aprovação e a resposta da pessoa sobre o que os R$ 997 cobrem, quando começam os 3 dias e o destino do botão.
