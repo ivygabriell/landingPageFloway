@@ -104,5 +104,5 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 **2026-11-23 · Spec da leva 1 (Lead, Claude Code)**
 
 - **Decisão da pessoa:** construir com a mesma base do site oficial (Next.js estático, React, three.js, efeitos copiados e adaptados de `sitesFlowway`), "1. pode seguir".
-- **Escrito:** spec em `processo/specs/2026-11-23-leva-1.md` e mapa de riscos em `processo/seguranca.md`, esperando a aprovação da pessoa. Chamadas da Lead a confirmar: cortes do Incluso depois do fim da oferta; destino provisório `#comecar` que bloqueia a publicação.
-- **Onde parou:** depois da aprovação da spec, o plano (`superpowers:writing-plans`) e a escolha do modo de execução.
+- **Spec aprovada pela pessoa** (`processo/specs/2026-11-23-leva-1.md`, "aprovado"), com o mapa de riscos em `processo/seguranca.md` e as chamadas da Lead: cortes do Incluso depois do fim da oferta; destino provisório `#comecar` que bloqueia a publicação.
+- **Onde parou:** plano em `processo/planos/2026-11-23-leva-1.md` (8 tarefas; a 1 sozinha, 2 a 7 em paralelo, a 8 no fim), esperando a aprovação da pessoa e a escolha do modo de execução.
