@@ -56,3 +56,9 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 - **Decisões da pessoa:** a landing **não** parte da `landing-floway` que existe em `ivygabriell/sitesFlowway` (`apps/site/public/conceitos/landing-floway/`); é outra. Do site oficial vêm a identidade e as regras da marca. Commits com o e-mail `noreply` do GitHub (configurado só neste repositório).
 - **Referências:** site oficial `ivygabriell/sitesFlowway` (Next.js 15.5, método 6.0.0); identidade em `CreateHubAI/identidadeFloway` (só leitura: paleta `#F7F7F5` `#DCDCD8` `#787878` `#121212`, azul `#002FA7`/`#5B7BFF` só em detalhes; Inter Tight, Azeret Mono, Instrument Serif; logo só pelos arquivos de `assets/brand/`). Regras da marca no site oficial: nada inventado (cliente, número, depoimento), trabalho sem cliente leva "Conceito", sem e-mail ou telefone na página, `noindex` até publicar, publicar é decisão da pessoa.
 - **Onde parou:** estrutura do método criada; próxima fase é a 0 (descobrir a intenção) com `superpowers:brainstorming`.
+
+**2026-11-22 · Hero aprovado (Lead, Claude Code)**
+
+- **Aprovado pela pessoa:** hero com cabeçalho (R-01, R-02), celular e desktop, registrados em `processo/telas/` com os tokens do Penpot. Desenho feito pela Lead no Penpot via MCP (servidor do projeto, chamado por HTTP porque as ferramentas não carregaram nesta sessão).
+- **Pedido novo da pessoa:** garantir o **senso de urgência da Black Friday**. Muda o que será construído; falta a pessoa dizer a oferta real (o que, quanto, até quando), porque nada pode ser inventado.
+- **Atenção:** o arquivo `New File 4` do Penpot também tem, na página 1, um desenho do site oficial; não foi tocado.
