@@ -76,3 +76,8 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 - **Prazo:** a página precisa estar no ar antes de 27/11. A pessoa aprovou a **versão enxuta** (hero, incluso, conceitos, perguntas, chamada final); dor, virada, processo e "por que a Floway" ficam para a segunda leva.
 - **Ferramenta (2026-11-22):** a pessoa decidiu "não utilize o codex, somente o claude". Todos os papéis no Claude Code; a revisão cruzada vira revisão com contexto limpo por outra sessão do Claude Code no Orca. A revisão do Codex dos PRs #1 e #2 tinha parado no limite de uso do Codex e foi encerrada (`worker-stop`).
 - **Onde parou (2026-11-22):** PR #1 (requisitos R-01 a R-12, leva 1, só Claude Code) integrado; hero e hero Black Friday registrados neste PR; seção Incluso (R-05) desenhada no Penpot, esperando aprovação e a resposta da pessoa sobre o que os R$ 997 cobrem, quando começam os 3 dias e o destino do botão.
+
+**2026-11-22 · Incluso e oferta (Lead, Claude Code)**
+
+- **Decisões da pessoa:** oferta "de R$ 4.997 por R$ 997" (R$ 4.997 é o preço real cobrado hoje); o R$ 997 vale para um site do tipo que o cliente quiser; os 3 dias contam a partir do fechamento do material com o cliente; os botões esperam o formulário da Floway (sem WhatsApp como alternativa); menu da leva 1 só com Incluso, Conceitos e Perguntas. Seção Incluso (R-05) aprovada, mais agressiva, como o único trecho escuro.
+- **Onde parou:** Incluso e hero revistos registrados; próximo desenho é Conceitos (R-06), com as 5 peças do site oficial.

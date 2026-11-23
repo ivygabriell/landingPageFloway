@@ -21,3 +21,8 @@ Catálogo do que existe no Penpot (conjunto de tokens `Floway`, cores da bibliot
 | Faixa de benefícios | — | rolando; parada no reduzido | 52 de altura, linha `cor.cinza-claro` no topo, Azeret Mono 11 |
 | Faixa de urgência | celular (oferta curta + dias, horas, minutos), desktop (oferta completa + segundos) | contando; some ao zerar | 36/40 de altura, `cor.preto`, Azeret Mono 10–11 `cor.claro`, ponto `cor.azul-no-escuro` |
 | Selo Black Friday | celular: "(01) [Black Friday] Sites sob medida" (texto curto por espaço); desktop: texto inteiro | só durante a oferta | pílula `cor.azul`, Azeret Mono 700 11 `cor.papel`, 22 de altura |
+| Trecho escuro (Incluso) | — | único trecho escuro da landing | fundo `cor.preto`, texto `cor.claro`, apoio `cor.cinza-claro`, detalhe `cor.azul-no-escuro`, linhas #3A3A3A |
+| Preço com âncora | "De R$ 4.997" riscado + selo "−80%" (`cor.azul-no-escuro`, texto `cor.preto`) + "por" (Instrument Serif itálico) | só durante a oferta | Inter Tight 500 28/40; preço Inter Tight 800 com o glitch da palavra FLOWAY |
+| Contagem em caixas | dias, horas, min, seg | contando; some no fim da oferta | 4 caixas com contorno #3A3A3A, raio 10, número Inter Tight 700 34/52 |
+| Lista com ✓ | — | os itens se marcam um depois do outro ao rolar | ✓ `cor.azul-no-escuro`, Inter Tight 500 18–21, linhas #3A3A3A |
+| Botão claro | sobre o escuro (`cor.claro`, texto `cor.preto`) | padrão; hover cresce 2 % | 60/68 de altura |
