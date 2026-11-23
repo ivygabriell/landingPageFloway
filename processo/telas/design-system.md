@@ -28,3 +28,4 @@ Catálogo do que existe no Penpot (conjunto de tokens `Floway`, cores da bibliot
 | Botão claro | sobre o escuro (`cor.claro`, texto `cor.preto`) | padrão; hover cresce 2 % | 60/68 de altura |
 | Cartão de conceito | capa 730×1080 com raio 12; hover com sombra e "Abrir o site ↗" | padrão, hover/foco | selo "Conceito" (contorno `cor.preto`, Azeret Mono 10), nome Inter Tight 600 20–22, setor · tipo Azeret Mono 11 |
 | Botão contorno | "Quero um site assim →" | padrão | contorno `cor.preto`, 52/60 de altura |
+| Pergunta (acordeão) | aberta (− e traço azul de 48 sob a pergunta) e fechada (+) | uma aberta por vez | número Azeret Mono 11, pergunta Inter Tight 500 19/24, resposta Inter Tight 400 16/18, linhas `cor.cinza-claro` |
