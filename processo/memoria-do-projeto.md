@@ -106,3 +106,9 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 - **Decisão da pessoa:** construir com a mesma base do site oficial (Next.js estático, React, three.js, efeitos copiados e adaptados de `sitesFlowway`), "1. pode seguir".
 - **Spec aprovada pela pessoa** (`processo/specs/2026-11-23-leva-1.md`, "aprovado"), com o mapa de riscos em `processo/seguranca.md` e as chamadas da Lead: cortes do Incluso depois do fim da oferta; destino provisório `#comecar` que bloqueia a publicação.
 - **Onde parou:** plano em `processo/planos/2026-11-23-leva-1.md` (8 tarefas; a 1 sozinha, 2 a 7 em paralelo, a 8 no fim), aprovado pela pessoa ("sim pode seguir, va pelo orca"); issues #8 a #15 (Tarefas 1 a 8); revisão com contexto limpo do PR #7 com 7 achados importantes, corrigidos no plano.
+
+**2026-11-23 · Modo com agentes especialistas (Lead, Claude Code)**
+
+- **Decisão da pessoa:** "sim, pode seguir com os agentes especialistas". Harnesses copiados do método 7.0.0 para `processo/agentes/` (lead, architect, frontend, designer, security, product, ops; sem backend), com uma nota "Neste projeto" no topo de cada um (só o Claude Code; Penpot no lugar do Figma) e a frase da revisão pelo Codex trocada no `lead.md`. Nada do projeto foi apagado.
+- **Transição:** a Builder da Tarefa 1 (issue #8) foi aberta pela Lead antes da troca e termina como está; o Frontend assume a validação técnica dela e abre as Builders das Tarefas 2 a 7.
+
