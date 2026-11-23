@@ -1,0 +1,25 @@
+/* Tokens do conjunto Floway do Penpot (processo/telas/tokens.json), com os mesmos nomes: cor.claro → --cor-claro.
+   Cores, espaços e raios só por aqui. As fontes vêm do next/font (src/fontes.ts): --fonte-sans, --fonte-mono, --fonte-serif. */
+:root {
+  --cor-claro: #F7F7F5;
+  --cor-cinza-claro: #DCDCD8;
+  --cor-cinza-medio: #787878;
+  --cor-preto: #121212;
+  --cor-azul: #002FA7;
+  --cor-azul-no-escuro: #5B7BFF;
+  --cor-papel: #FFFFFF;
+  --cor-fundo: var(--cor-claro);
+  --cor-texto: var(--cor-preto);
+  --cor-detalhe: var(--cor-azul);
+
+  --espaco-1: 4px;
+  --espaco-2: 8px;
+  --espaco-3: 16px;
+  --espaco-4: 24px;
+  --espaco-5: 40px;
+  --espaco-6: 64px;
+  --espaco-7: 104px;
+
+  --raio-botao: 999px;
+  --raio-cartao: 12px;
+}
