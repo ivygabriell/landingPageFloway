@@ -22,7 +22,7 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 ## R-01 · Hero com a promessa e o botão principal
 
 - **História:** como dono ou gestor de uma empresa que chegou à página, quero entender em segundos o que a Floway faz e sentir que é diferente, para decidir continuar lendo ou pedir um projeto.
-- **Regras de negócio:** uma promessa (título curto) e uma frase de apoio; um botão principal "Iniciar um projeto" e um secundário que leva às seções abaixo; a palavra FLOWAY com o efeito de vidro e glitch da marca, montada na entrada e na rolagem.
+- **Regras de negócio:** uma promessa (título curto) e uma frase de apoio; uma faixa de benefícios no pé da seção (Estratégia, Texto que vende, Design sob medida, Animação e 3D, Site rápido, Medição), rolando devagar; um botão principal "Iniciar um projeto" e um secundário que leva às seções abaixo; a palavra FLOWAY com o efeito de vidro e glitch da marca, montada na entrada e na rolagem.
 - **Casos de erro:** sem WebGL, a palavra aparece estática com o mesmo enquadramento; com movimento reduzido, sem animação e com todo o texto visível.
 - **Critérios de aceite:**
   - [ ] título, frase de apoio e botão principal visíveis sem rolar em 390×844 e em 1440×900
@@ -57,7 +57,7 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 - **Dependências:** R-01.
 - **Telas:** `Dor · celular`, `Dor · desktop`.
 - **Peso:** valor alto (cria a necessidade); esforço M; risco baixo.
-- **Prioridade proposta:** 3.
+- **Prioridade proposta:** leva 2.
 - **Fora do escopo:** números de mercado (nenhum número inventado, R-11).
 
 ## R-04 · A virada: a página mostra que ela é o produto
@@ -70,7 +70,7 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 - **Dependências:** R-01, R-03.
 - **Telas:** `Virada · celular`, `Virada · desktop`.
 - **Peso:** valor alto (é o diferencial da página); esforço M; risco médio (a ideia precisa ficar clara sem explicação).
-- **Prioridade proposta:** 4.
+- **Prioridade proposta:** leva 2.
 - **Fora do escopo:** demonstração interativa editável pelo visitante.
 
 ## R-05 · O que está incluso
@@ -79,25 +79,25 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 - **Regras de negócio:** estratégia e estrutura, texto que vende, design sob medida, animação e 3D, site rápido e no Google, medição; cartões que se encaixam como peças na rolagem.
 - **Casos de erro:** preço e prazo só os da oferta de R-12, enquanto ela valer; nenhum outro preço ou prazo.
 - **Critérios de aceite:**
-  - [ ] cada item tem título e uma frase, sem jargão técnico sem explicação
+  - [ ] cada item tem título e uma frase; nenhum destes termos aparece sem uma frase que o explique: SEO, WebGL, 3D, CRM, conversão
 - **Dependências:** R-11.
 - **Telas:** `Incluso · celular`, `Incluso · desktop`.
 - **Peso:** valor alto; esforço M; risco baixo.
-- **Prioridade proposta:** 5.
+- **Prioridade proposta:** 4 (leva 1).
 - **Fora do escopo:** tabela de preços (o único preço é o da oferta de R-12).
 
 ## R-06 · Conceitos (prova)
 
 - **História:** como comprador desconfiado, quero ver trabalhos da Floway, para acreditar na qualidade.
-- **Regras de negócio:** galeria horizontal com capa revelada no hover (no celular, ao tocar ou rolar); todo trabalho sem cliente leva o rótulo "Conceito"; nenhum cliente ou resultado inventado.
-- **Casos de erro:** imagem que não carrega mostra a cor de fundo e o nome do conceito; sem hover (toque), a capa aparece por padrão.
+- **Regras de negócio:** galeria horizontal com capa revelada no hover (no celular, sem hover, a capa aparece por padrão); todo trabalho sem cliente leva o rótulo "Conceito"; nenhum cliente ou resultado inventado.
+- **Casos de erro:** imagem que não carrega mostra a cor de fundo e o nome do conceito.
 - **Critérios de aceite:**
   - [ ] todo cartão sem cliente mostra "Conceito"
   - [ ] a galeria funciona pelo teclado
 - **Dependências:** R-11; quais conceitos entram é decisão da pessoa.
 - **Telas:** `Conceitos · celular`, `Conceitos · desktop`.
 - **Peso:** valor alto (prova); esforço M; risco médio (direitos e marcas fictícias, INPI).
-- **Prioridade proposta:** 6.
+- **Prioridade proposta:** 5 (leva 1).
 - **Fora do escopo:** página de case.
 
 ## R-07 · Processo
@@ -110,7 +110,7 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 - **Dependências:** R-11.
 - **Telas:** `Processo · celular`, `Processo · desktop`.
 - **Peso:** valor médio; esforço M; risco baixo.
-- **Prioridade proposta:** 7.
+- **Prioridade proposta:** leva 2.
 - **Fora do escopo:** prazos em dias, além da entrega em até 3 dias da oferta de R-12.
 
 ## R-08 · Por que a Floway
@@ -123,20 +123,20 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 - **Dependências:** R-11.
 - **Telas:** `Por que · celular`, `Por que · desktop`.
 - **Peso:** valor médio; esforço P; risco médio (afirmações comparativas precisam ser verdadeiras).
-- **Prioridade proposta:** 8.
+- **Prioridade proposta:** leva 2.
 - **Fora do escopo:** citar concorrentes pelo nome.
 
 ## R-09 · Perguntas frequentes
 
 - **História:** como comprador com dúvidas, quero respostas diretas antes de falar com alguém.
-- **Regras de negócio:** perguntas sobre diferença entre site e landing page, prazo (sai do diagnóstico), identidade visual, integrações e manutenção; respostas abrem com movimento suave.
+- **Regras de negócio:** perguntas sobre diferença entre site e landing page, prazo (enquanto a oferta de R-12 vale: entrega em até 3 dias; depois: o prazo sai do diagnóstico), identidade visual, integrações e manutenção; respostas abrem com movimento suave.
 - **Casos de erro:** com JavaScript desligado, as respostas ficam visíveis.
 - **Critérios de aceite:**
   - [ ] cada pergunta abre e fecha pelo teclado e informa o estado ao leitor de tela
 - **Dependências:** R-11.
 - **Telas:** `Perguntas · celular`, `Perguntas · desktop`.
 - **Peso:** valor médio; esforço P; risco baixo.
-- **Prioridade proposta:** 9.
+- **Prioridade proposta:** 6 (leva 1).
 - **Fora do escopo:** busca nas perguntas.
 
 ## R-10 · Chamada final
@@ -145,11 +145,11 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 - **Regras de negócio:** frase de fechamento e o botão "Iniciar um projeto"; a esfera de partículas da marca que vira o "F". **O destino do botão fica em aberto** até a pessoa terminar as alterações no formulário da Floway.
 - **Casos de erro:** sem WebGL ou com movimento reduzido, o "F" aparece estático.
 - **Critérios de aceite:**
-  - [ ] o botão é o elemento de maior destaque da seção
-- **Dependências:** R-01; destino do formulário (pessoa).
+  - [ ] o botão segue a captura aprovada da seção em `processo/telas/` (posição, tamanho e cor)
+- **Dependências:** R-01; destino do botão (pessoa) — sem ele a leva 1 não converte, então precisa estar definido antes da publicação de 27/11.
 - **Telas:** `Chamada final · celular`, `Chamada final · desktop`.
 - **Peso:** valor alto (é a conversão); esforço G (esfera); risco médio (destino pendente).
-- **Prioridade proposta:** 10, desenhada junto do hero porque repete a linguagem dele.
+- **Prioridade proposta:** 7 (leva 1), desenhada junto do hero porque repete a linguagem dele.
 - **Fora do escopo:** o formulário em si.
 - **Durante a oferta:** a chamada final repete a condição de R-12 (valor, entrega e prazo).
 
@@ -166,14 +166,16 @@ Telas: desenhadas no **Penpot** (decisão da pessoa, no lugar do Figma do métod
 ## R-12 · Urgência da Black Friday
 
 - **História:** como empresa que está pensando em ter um site, quero saber que existe uma condição que acaba logo, para decidir agora.
-- **Regras de negócio:** a oferta, definida pela pessoa em 2026-11-22: **site por R$ 997, entregue em até 3 dias, para projetos fechados até 27/11/2026 às 23h59** (horário de Brasília). Faixa fixa no topo com a oferta e a contagem regressiva até esse momento; selo "Black Friday" e a linha da condição no hero; a chamada final repete a condição. A contagem é real, calculada do relógio do visitante contra o fim em horário de Brasília; nada de contagem que reinicia.
-- **Casos de erro:** depois do fim, a faixa, o selo e a linha da condição somem e o hero volta à versão aprovada sem a oferta (nunca "00d 00h 00m" parado na tela); sem JavaScript, a faixa mostra a data de término por extenso, sem contagem.
+- **Regras de negócio:** a oferta, definida pela pessoa em 2026-11-22: **site por R$ 997, entregue em até 3 dias, para projetos fechados até 27/11/2026 às 23h59** (horário de Brasília). Faixa fixa no topo com a oferta e a contagem regressiva até esse momento; selo "Black Friday" e a linha da condição no hero; a chamada final repete a condição. A contagem é real, calculada do relógio do visitante contra o fim em horário de Brasília (risco aceito: relógio errado no aparelho do visitante mostra a contagem errada); nada de contagem que reinicia. **Fim exato (chamada da Lead, a confirmar):** a oferta vale até 27/11/2026 23h59min59s (UTC−3) e some a partir de 28/11/2026 00h00min00s. A contagem arredonda para cima, para nunca mostrar zero enquanto vale.
+- **Textos exatos:** faixa no desktop "Black Friday · Site por R$ 997, entregue em até 3 dias · até 27/11 às 23h59"; faixa no celular "Black Friday · Site por R$ 997"; linha do hero e chamada final "Site por R$ 997, entregue em até 3 dias, para projetos fechados até 27/11 às 23h59."; cartão da oferta (R-05) "R$ 997 · Site completo, entregue em até 3 dias. Para projetos fechados até 27/11 às 23h59."
+- **Casos de erro:** depois do fim, a faixa, o selo e a linha da condição somem e o hero volta à versão aprovada sem a oferta (nunca "00d 00h 00m" parado na tela); sem JavaScript, a faixa mostra os mesmos textos sem a contagem (a data já está no texto); como o site é estático, uma publicação em 28/11 a partir de 00h00 tira a oferta do HTML (tarefa de publicação, aprovada pela pessoa como as outras).
 - **Critérios de aceite:**
-  - [ ] com o relógio em 27/11/2026 23h58 (Brasília), a contagem mostra 1 minuto; às 23h59min01s, a oferta não aparece
-  - [ ] o valor, o prazo de entrega e a data na página são iguais aos desta ficha
+  - [ ] com o relógio em 27/11/2026 23h58min30s (UTC−3), a contagem mostra 2 minutos no celular ("00d 00h 02m") e 1 min 30 s no desktop; em 28/11/2026 00h00min00s, a oferta não aparece
+  - [ ] cada lugar da página mostra exatamente o texto da linha "Textos exatos" acima
   - [ ] a faixa não cobre o cabeçalho nem o botão "Iniciar um projeto"
 - **Dependências:** R-01, R-02.
 - **Telas:** `Hero · celular · Black Friday`, `Hero · desktop · Black Friday` (Penpot), registro em `processo/telas/`.
 - **Peso:** valor alto (urgência da campanha); esforço M; risco médio (fuso horário e oferta que precisa sumir na hora certa).
 - **Prioridade proposta:** 3, logo depois do hero e do cabeçalho.
+- **Pendente da pessoa:** o que os R$ 997 cobrem (quantas páginas, se vale para landing page e para site, quais itens de R-05) e quando começam os 3 dias.
 - **Fora do escopo:** limite de vagas (a pessoa não definiu); cupom ou pagamento na página.

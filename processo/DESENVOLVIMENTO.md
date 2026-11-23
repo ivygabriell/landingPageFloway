@@ -2,7 +2,7 @@
 
 Versão do método: 7.0.0
 Lead: Claude Code
-Telas: Penpot (decisão da pessoa em 2026-11-22, no lugar do Figma; link do arquivo quando criado); registro em processo/telas/
+Telas: Penpot (decisão da pessoa em 2026-11-22, no lugar do Figma): arquivo `New File 4`, página `Landing Floway` (file-id `7b7d55f9-965b-8000-8008-fa27170dff9f`); registro em processo/telas/
 Cenários aplicados:
 - site-estatico (testado em 1 projeto)
 
@@ -52,7 +52,7 @@ Uma decisão é da pessoa quando aciona pelo menos um gatilho: muda **o que** se
 - Com o Orca: a Lead distribui as tarefas aos agentes (`orca orchestration worker-start`); o Orca cria e remove as worktrees, e os scripts acima ficam para quem trabalha sem ele. Prompt: `modelos/prompt-lead-orca.md` do método.
 - Ferramentas: só o Claude Code (seção Ferramenta por papel, acima), que lê o `CLAUDE.md`. Todo PR recebe ao menos uma revisão com contexto limpo, de outra sessão do Claude Code aberta no Orca. Quando a cota acaba no meio da tarefa, a Builder faz commit, envia a branch e comenta na issue onde parou; outra sessão do Claude Code continua na mesma branch. Com back e front em tarefas paralelas, o contrato da API é aprovado antes de qualquer tarefa de construção.
 - Para trazer este projeto à versão mais nova do método: `/metodo:atualizar-projeto`.
-- Requisitos: `processo/requisitos.md` (fichas R-xx com o peso). Com interface, a identidade e todas as telas são aprovadas no Figma e registradas em `processo/telas/` antes do plano; o código segue a versão registrada.
+- Requisitos: `processo/requisitos.md` (fichas R-xx com o peso). Com interface, a identidade e todas as telas são aprovadas no Penpot e registradas em `processo/telas/` antes do plano; o código segue a versão registrada.
 - Memória do projeto: `processo/memoria-do-projeto.md`.
 
 ## Antes do primeiro push para um repositório público

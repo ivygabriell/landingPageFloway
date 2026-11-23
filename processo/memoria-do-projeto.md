@@ -52,7 +52,7 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 
 **2026-11-21 · Preparação (Lead, Claude Code)**
 
-- **O que é:** uma landing page nova da Floway, num repositório próprio (`ivygabriell/landingPageFloway`, público). Cenário `site-estatico`, método 7.0.0, Claude Code e Codex pela tabela Ferramenta por papel (escolha da pessoa).
+- **O que é:** uma landing page nova da Floway, num repositório próprio (`ivygabriell/landingPageFloway`, público). Cenário `site-estatico`, método 7.0.0, Claude Code e Codex pela tabela Ferramenta por papel (escolha da pessoa; substituída em 2026-11-22 por só o Claude Code).
 - **Decisões da pessoa:** a landing **não** parte da `landing-floway` que existe em `ivygabriell/sitesFlowway` (`apps/site/public/conceitos/landing-floway/`); é outra. Do site oficial vêm a identidade e as regras da marca. Commits com o e-mail `noreply` do GitHub (configurado só neste repositório).
 - **Referências:** site oficial `ivygabriell/sitesFlowway` (Next.js 15.5, método 6.0.0); identidade em `CreateHubAI/identidadeFloway` (só leitura: paleta `#F7F7F5` `#DCDCD8` `#787878` `#121212`, azul `#002FA7`/`#5B7BFF` só em detalhes; Inter Tight, Azeret Mono, Instrument Serif; logo só pelos arquivos de `assets/brand/`). Regras da marca no site oficial: nada inventado (cliente, número, depoimento), trabalho sem cliente leva "Conceito", sem e-mail ou telefone na página, `noindex` até publicar, publicar é decisão da pessoa.
 - **Onde parou:** estrutura do método criada; próxima fase é a 0 (descobrir a intenção) com `superpowers:brainstorming`.
