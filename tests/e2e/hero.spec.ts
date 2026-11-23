@@ -77,7 +77,8 @@ async function entradaEmDoisSegundos(page: Page) {
 test('a entrada termina em até 2 s, sem erro de página nem de console', async ({ page }) => {
   const erros: string[] = [];
   page.on('pageerror', (e) => erros.push(e.message));
-  page.on('console', (m) => void (m.type() === 'error' && erros.push(m.text())));
+  // O favicon.ico ainda não existe (fora do hero): o 404 dele não conta.
+  page.on('console', (m) => void (m.type() === 'error' && !m.location().url.endsWith('/favicon.ico') && erros.push(m.text())));
   await entradaEmDoisSegundos(page);
   await page.mouse.move(300, 300);
   await page.mouse.wheel(0, 400);

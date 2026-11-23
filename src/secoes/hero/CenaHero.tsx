@@ -191,8 +191,9 @@ function Cena() {
     entrada
       .to(s, { opacidade: 1, duration: TEMPOS['tempo-rapido'], ease: CURVAS['curva-padrao'] }, 0)
       .to(s, { tremor: 0, duration: TEMPOS['tempo-rapido'], ease: CURVAS['curva-saida'] }, TEMPOS['tempo-cabecalho'] - TEMPOS['tempo-rapido']);
+    // As lâminas sobem junto com o glitch: a última assenta em 1 s, e a entrada inteira cabe nos 2 s mesmo começando tarde.
     s.subida.forEach((_, i) =>
-      entrada.to(s.subida, { [i]: 0, duration: TEMPOS['tempo-cabecalho'], ease: CURVAS['curva-saida'] }, TEMPOS['tempo-rapido'] + i * INTERVALOS['intervalo-curto']),
+      entrada.to(s.subida, { [i]: 0, duration: TEMPOS['tempo-transicao'], ease: CURVAS['curva-saida'] }, i * INTERVALOS['intervalo-curto']),
     );
     // Segue o tempo real mesmo com quadros lentos (como no site oficial), sem mexer no lagSmoothing global.
     const inicio = performance.now();
