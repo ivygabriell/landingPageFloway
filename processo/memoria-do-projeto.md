@@ -105,4 +105,4 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 
 - **Decisão da pessoa:** construir com a mesma base do site oficial (Next.js estático, React, three.js, efeitos copiados e adaptados de `sitesFlowway`), "1. pode seguir".
 - **Spec aprovada pela pessoa** (`processo/specs/2026-11-23-leva-1.md`, "aprovado"), com o mapa de riscos em `processo/seguranca.md` e as chamadas da Lead: cortes do Incluso depois do fim da oferta; destino provisório `#comecar` que bloqueia a publicação.
-- **Onde parou:** plano em `processo/planos/2026-11-23-leva-1.md` (8 tarefas; a 1 sozinha, 2 a 7 em paralelo, a 8 no fim), esperando a aprovação da pessoa e a escolha do modo de execução.
+- **Onde parou:** plano em `processo/planos/2026-11-23-leva-1.md` (8 tarefas; a 1 sozinha, 2 a 7 em paralelo, a 8 no fim), aprovado pela pessoa ("sim pode seguir, va pelo orca"); issues #8 a #15 (Tarefas 1 a 8); revisão com contexto limpo do PR #7 com 7 achados importantes, corrigidos no plano.
