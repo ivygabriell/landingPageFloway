@@ -39,3 +39,8 @@ test('ofertaNoBuild respeita OFERTA_AGORA', () => {
   vi.stubEnv('OFERTA_AGORA', '2026-11-27T12:00:00Z');
   expect(ofertaNoBuild()).toBe(true);
 });
+
+test('OFERTA_AGORA inválido para o build, em vez de gerar a página sem a oferta em silêncio', () => {
+  vi.stubEnv('OFERTA_AGORA', '25/11/2026');
+  expect(() => ofertaNoBuild()).toThrow(/OFERTA_AGORA.*25\/11\/2026/);
+});

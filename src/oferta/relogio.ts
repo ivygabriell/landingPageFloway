@@ -41,6 +41,12 @@ export function contagemLonga(agora: Date): string {
 }
 
 // O instante do build: OFERTA_AGORA (ISO) simula outro momento. Só do servidor (ver src/oferta/Oferta.tsx).
-const agoraDoBuild = () => (process.env.OFERTA_AGORA ? new Date(process.env.OFERTA_AGORA) : new Date());
+function agoraDoBuild(): Date {
+  const valor = process.env.OFERTA_AGORA;
+  if (!valor) return new Date();
+  const agora = new Date(valor);
+  if (Number.isNaN(agora.getTime())) throw new Error(`OFERTA_AGORA inválido: "${valor}" (use uma data ISO, como 2026-11-25T15:00:00Z)`);
+  return agora;
+}
 
 export const ofertaNoBuild = (): boolean => agoraDoBuild() < FIM_DA_OFERTA;

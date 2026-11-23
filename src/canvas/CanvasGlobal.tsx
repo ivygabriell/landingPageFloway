@@ -1,23 +1,13 @@
 'use client';
 
 import { GlobalCanvas } from '@14islands/r3f-scroll-rig';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense } from 'react';
 import { dprMaximo } from '@/lib/ambiente';
-import { marcarModo } from '@/lib/webgl';
 
 // Copiado do site oficial (sitesFlowway, componentes/canvas). Um único canvas WebGL atrás de todo o DOM; cada seção
-// envia a própria cena com <UseCanvas>. Monta depois da primeira pintura (efeito), e só com WebGL e sem movimento
-// reduzido: nos outros modos a página usa as versões em CSS e SVG. Os eventos do ponteiro vêm do <body>.
+// envia a própria cena com <UseCanvas>. Quem decide se monta (e baixa este módulo) é o CarregarCanvas, só com WebGL e
+// sem movimento reduzido. Os eventos do ponteiro vêm do <body>, porque o canvas fica atrás do conteúdo.
 export function CanvasGlobal() {
-  const [montar, setMontar] = useState(false);
-
-  useEffect(() => {
-    const modo = marcarModo();
-    if (modo === 'sem-webgl') document.documentElement.classList.add('js-global-canvas-error');
-    setMontar(modo === 'desktop' || modo === 'celular');
-  }, []);
-
-  if (!montar) return null;
   return (
     <GlobalCanvas
       flat

@@ -16,6 +16,7 @@ h1, h2, h3, p, ul, li { margin: 0; padding: 0; font-weight: inherit; }
 li { list-style: none; }
 img, svg { display: block; max-width: 100%; }
 
-/* A oferta (src/oferta): o script do <head> ou a contagem marcam <html data-oferta="encerrada"> no fim. */
-html[data-oferta="encerrada"] [data-oferta] { display: none; }
-html:not([data-oferta="encerrada"]) [data-sem-oferta] { display: none; }
+/* A oferta (src/oferta): o script do <head> ou a contagem marcam <html data-oferta="encerrada"> no fim.
+   !important: o display de uma seção com seletor mais forte não pode trazer a oferta de volta. */
+html[data-oferta="encerrada"] [data-oferta] { display: none !important; }
+html:not([data-oferta="encerrada"]) [data-sem-oferta] { display: none !important; }

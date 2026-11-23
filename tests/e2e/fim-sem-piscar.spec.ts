@@ -34,3 +34,31 @@ test('depois do fim, nenhum quadro mostra a oferta', async ({ page }) => {
   expect(quadros).toBeGreaterThan(5);
   expect(viu).toBe(false);
 });
+
+test('depois do fim, a oferta fica escondida mesmo com um seletor de seção mais forte', async ({ page }) => {
+  await page.clock.install({ time: new Date('2026-11-28T00:00:01-03:00') });
+  await page.goto('/');
+  // Especificidade (0,3,3), maior que a da regra do fim (0,2,1): como o estilo de uma seção com várias classes.
+  await page.addStyleTag({ content: 'html body p[data-oferta][data-oferta][data-oferta] { display: flex; }' });
+  await expect(page.locator('html')).toHaveAttribute('data-oferta', 'encerrada');
+  await page.evaluate(() => {
+    const oferta = document.createElement('p');
+    oferta.setAttribute('data-oferta', '');
+    oferta.textContent = 'R$ 997';
+    document.querySelector('main')!.append(oferta);
+  });
+  await expect(page.locator('p[data-oferta]')).toBeHidden();
+});
+
+test('na oferta, o que é do depois fica escondido mesmo com um seletor de seção mais forte', async ({ page }) => {
+  await page.clock.install({ time: new Date('2026-11-25T12:00:00-03:00') });
+  await page.goto('/');
+  await page.evaluate(() => {
+    const depois = document.createElement('p');
+    depois.setAttribute('data-sem-oferta', '');
+    depois.textContent = 'Seu site novo.';
+    document.querySelector('main')!.append(depois);
+  });
+  await page.addStyleTag({ content: 'html body p[data-sem-oferta][data-sem-oferta][data-sem-oferta] { display: flex; }' });
+  await expect(page.locator('p[data-sem-oferta]')).toBeHidden();
+});

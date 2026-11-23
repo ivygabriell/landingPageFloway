@@ -1,4 +1,4 @@
-import { CanvasGlobal } from '@/canvas/CanvasGlobal';
+import { CarregarCanvas } from '@/canvas/CarregarCanvas';
 import { Cabecalho } from '@/secoes/cabecalho';
 import { ChamadaFinal } from '@/secoes/chamada-final';
 import { Conceitos } from '@/secoes/conceitos';
@@ -20,7 +20,7 @@ export default function Pagina() {
         <Perguntas />
         <ChamadaFinal />
       </main>
-      <CanvasGlobal />
+      <CarregarCanvas />
     </>
   );
 }

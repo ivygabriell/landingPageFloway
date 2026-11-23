@@ -1,4 +1,4 @@
-import { chromium, expect, test } from '@playwright/test';
+import { chromium, expect, test, type Page } from '@playwright/test';
 
 const canal = process.env.CI ? undefined : 'chrome';
 
@@ -26,6 +26,21 @@ test('o HTML não tem e-mail, telefone nem link vazio', async ({ request }) => {
   expect(html).not.toMatch(/href="#"/);
 });
 
+// O three (WebGLRenderer) só é baixado quando o canvas vai montar: sem WebGL e no reduzido, nenhum script o traz.
+async function scriptsComThree(page: Page) {
+  const achados: string[] = [];
+  const pendentes: Promise<void>[] = [];
+  page.on('response', (r) => {
+    if (!r.url().endsWith('.js')) return;
+    pendentes.push(r.text().then((js) => void (js.includes('WebGLRenderer') && achados.push(r.url())), () => {}));
+  });
+  return async () => {
+    await page.waitForTimeout(1000);
+    await Promise.all(pendentes);
+    return achados;
+  };
+}
+
 test('carrega sem erro de página e com o canvas global no desktop', async ({ page }) => {
   const erros: string[] = [];
   page.on('pageerror', (e) => erros.push(e.message));
@@ -36,15 +51,16 @@ test('carrega sem erro de página e com o canvas global no desktop', async ({ pa
   expect(erros).toEqual([]);
 });
 
-test('sem WebGL: modo-sem-webgl e nenhum canvas', async ({ baseURL }) => {
+test('sem WebGL: modo-sem-webgl, nenhum canvas e o three não é baixado', async ({ baseURL }) => {
   const navegador = await chromium.launch({ channel: canal, args: ['--disable-3d-apis', '--disable-webgl'] });
   try {
     const page = await navegador.newPage({ baseURL });
     const erros: string[] = [];
     page.on('pageerror', (e) => erros.push(e.message));
+    const comThree = await scriptsComThree(page);
     await page.goto('/');
     await expect(page.locator('html')).toHaveClass(/modo-sem-webgl/);
-    await page.waitForTimeout(500);
+    expect(await comThree()).toEqual([]);
     await expect(page.locator('canvas')).toHaveCount(0);
     expect(erros).toEqual([]);
   } finally {
@@ -52,10 +68,11 @@ test('sem WebGL: modo-sem-webgl e nenhum canvas', async ({ baseURL }) => {
   }
 });
 
-test('movimento reduzido: modo-reduzido e nenhum canvas', async ({ page }) => {
+test('movimento reduzido: modo-reduzido, nenhum canvas e o three não é baixado', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
+  const comThree = await scriptsComThree(page);
   await page.goto('/');
   await expect(page.locator('html')).toHaveClass(/modo-reduzido/);
-  await page.waitForTimeout(500);
+  expect(await comThree()).toEqual([]);
   await expect(page.locator('canvas')).toHaveCount(0);
 });
