@@ -92,3 +92,4 @@ Mantenha **uma linha por memória** no índice (`MEMORY.md`), com um gancho que 
 
 - **Decisões da pessoa:** Perguntas (R-09) aprovadas com as cinco respostas; o clique nos conceitos abre os sites dos conceitos como no site oficial; "Medição" e "Animação e 3D" saem da faixa de benefícios do hero; as capas dos conceitos ficam como estão.
 - **Onde parou:** falta desenhar a Chamada final (R-10); depois, spec e plano para construir a leva 1 antes de 27/11.
+- **Pendência da pessoa:** o que a página diz depois de 27/11 23h59 (respostas sem a oferta para as perguntas 1 a 3, título da chamada final, Incluso sem preço). Até lá, a Lead decidiu esconder no navegador e tirar na publicação de 28/11.
