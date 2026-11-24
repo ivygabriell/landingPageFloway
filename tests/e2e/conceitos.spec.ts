@@ -27,12 +27,17 @@ test('desktop: rolar a página move a galeria na horizontal até o quinto cartã
   await page.evaluate((y) => scrollTo(0, y - parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) + 2), topo);
   const antes = await posicoesX(page);
   await expect(cartoes(page).nth(4)).not.toBeInViewport({ ratio: 1 });
-  await page.mouse.wheel(0, 3000);
-  await expect(cartoes(page).nth(4)).toBeInViewport({ ratio: 1 });
-  expect((await posicoesX(page))[0]).toBeLessThan(antes[0] - 500);
-  // Presa: o topo da seção segue abaixo do cabeçalho fixo.
-  const presa = await page.locator('#conceitos .conceitos__presa').evaluate((el) => el.getBoundingClientRect().top);
-  expect(Math.abs(presa - (await alturaDoTopoFixo(page)))).toBeLessThan(2);
+  // Presa: no meio do caminho, o topo da seção segue logo abaixo do cabeçalho fixo.
+  await page.mouse.wheel(0, 100);
+  await expect
+    .poll(async () => Math.abs((await page.locator('#conceitos .conceitos__presa').evaluate((el) => el.getBoundingClientRect().top)) - (await alturaDoTopoFixo(page))))
+    .toBeLessThan(2);
+  // Em passos curtos: a galeria anda enquanto a seção está presa e para no quinto cartão.
+  await expect(async () => {
+    await page.mouse.wheel(0, 120);
+    await expect(cartoes(page).nth(4)).toBeInViewport({ ratio: 1, timeout: 200 });
+  }).toPass({ timeout: 10_000 });
+  expect((await posicoesX(page))[0]).toBeLessThan(antes[0] - 200);
 });
 
 test('depois do pin, as âncoras #perguntas e #comecar caem abaixo do cabeçalho fixo', async ({ page }) => {
