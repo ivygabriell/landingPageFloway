@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import { DESTINO_DO_CONTATO } from '@/conteudo/contato';
 import { Hero } from '@/secoes/hero';
 
@@ -89,4 +89,29 @@ test('a palavra é o 4º path da assinatura (public/marca), com a mesma transla�
   expect(PALAVRA.d).toBe(paths[3].match(/\sd="([^"]+)"/)![1]);
   const [, x, y] = paths[3].match(/translate\(([\d.]+) ([\d.]+)\)/)!;
   expect(PALAVRA.translacao).toEqual([Number(x), Number(y)]);
+});
+
+describe('entrada no desktop com a cena', () => {
+  beforeEach(() => {
+    vi.resetModules();
+    vi.doMock('@/lib/webgl', () => ({ marcarModo: () => 'desktop' }));
+    vi.doMock('@/secoes/hero/CenaHero', () => ({ CenaHero: () => null }));
+    vi.useFakeTimers();
+  });
+  afterEach(() => {
+    vi.doUnmock('@/lib/webgl');
+    vi.doUnmock('@/secoes/hero/CenaHero');
+    vi.useRealTimers();
+    vi.restoreAllMocks();
+  });
+
+  // O CI (SwiftShader, máquina lenta) monta a seção tarde: o prazo conta do início da carga, não da montagem.
+  test('montada tarde (1,5 s depois do início da carga), a seção fica pronta até 1,7 s, sem esperar a cena', async () => {
+    vi.spyOn(performance, 'now').mockReturnValue(1500);
+    const { Hero: HeroComCena } = await import('@/secoes/hero');
+    const secao = render(<HeroComCena />).container.querySelector('section')!;
+    expect(secao.dataset.entrada).toBeUndefined();
+    act(() => vi.advanceTimersByTime(200));
+    expect(secao.dataset.entrada).toBe('pronta');
+  });
 });

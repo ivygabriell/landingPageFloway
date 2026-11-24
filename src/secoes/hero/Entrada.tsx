@@ -7,9 +7,10 @@ import { marcarModo } from '@/lib/webgl';
 // A cena WebGL (three, fiber e scroll-rig) só é baixada quando vai montar: fora do pacote inicial (regra do Architect).
 const CenaHero = dynamic(() => import('./CenaHero').then((m) => m.CenaHero), { ssr: false });
 
-// Se a cena não marcar a entrada pronta até aqui (ms depois de montar), a composição em SVG, que já está na tela
-// parada, é o estado final: a entrada termina em até 2 s também quando a cena demora (R-01).
-const LIMITE_DA_ENTRADA = 1600;
+// Se a cena não marcar a entrada pronta até este instante da carga (ms desde o início da navegação, não da montagem:
+// num aparelho lento a montagem já chega tarde), a composição em SVG, parada na tela, é o estado final. Assim a entrada
+// termina em até 2 s também quando a cena demora (R-01); a cena que chega depois entra direto no repouso.
+const PRAZO_DA_ENTRADA = 1700;
 
 // Sem WebGL e no reduzido, a palavra em SVG já está no repouso: a entrada termina ao montar. No desktop e no celular,
 // a cena anima a entrada e marca <section data-entrada="pronta">. O texto e os botões nunca esperam por ela.
@@ -24,7 +25,7 @@ export function Entrada() {
     const modo = marcarModo();
     if (modo !== 'desktop' && modo !== 'celular') return pronta();
     setCena(true);
-    const limite = window.setTimeout(pronta, LIMITE_DA_ENTRADA);
+    const limite = window.setTimeout(pronta, Math.max(0, PRAZO_DA_ENTRADA - performance.now()));
     return () => clearTimeout(limite);
   }, []);
 
