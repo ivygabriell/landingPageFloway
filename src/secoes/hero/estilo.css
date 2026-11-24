@@ -1,0 +1,184 @@
+/* Hero (R-01, R-12) pelas capturas `Hero · *` e `Hero · * · Black Friday`. Mobile-first; desktop a partir de 900 px.
+   A faixa de urgência e o cabeçalho ficam fixos por cima (Tarefa 2, que define --altura-faixa e --altura-cabecalho);
+   o hero só se afasta deles. A seção não tem fundo: com WebGL, o canvas global desenha a palavra por trás. */
+.hero {
+  --hero-margem: calc(var(--espaco-3) + var(--espaco-1));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: calc(var(--altura-faixa, 0px) + var(--altura-cabecalho, 64px) + var(--espaco-5));
+  overflow: hidden;
+}
+
+/* ---------- selo ---------- */
+.hero-selo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--espaco-2) + var(--espaco-1));
+  padding: 0 var(--hero-margem);
+  font: 500 11px/1.2 var(--fonte-mono);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.hero-ponto { width: 8px; height: 8px; margin-right: calc(-1 * var(--espaco-1)); border-radius: 50%; background: var(--cor-azul); }
+.hero-pilula {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  /* A pílula passa da linha sem empurrar nada (na captura, o título fica no mesmo lugar com e sem a oferta). */
+  margin: calc(-1 * var(--espaco-1)) 0;
+  padding: 0 calc(var(--espaco-2) + var(--espaco-1) / 2);
+  border-radius: var(--raio-botao);
+  background: var(--cor-azul);
+  color: var(--cor-papel);
+  font-weight: 700;
+}
+.hero-selo-curto { margin-left: var(--espaco-1); }
+/* Celular na oferta: "(01) [Black Friday] Sites sob medida" (o texto curto cabe na linha). */
+html:not([data-oferta="encerrada"]) .hero-selo-longo { display: none; }
+
+/* ---------- palavra FLOWAY com vidro e glitch, parada (sem WebGL, reduzido e até a cena chegar) ---------- */
+.hero-palavra { position: relative; height: 208px; margin: 0 var(--hero-margem); }
+.hero-quadro { position: absolute; left: 0; right: 0; top: 50%; aspect-ratio: 1360 / 292; transform: translateY(-50%); }
+/* Com o canvas desenhando (CenaHero marca data-cena), esta composição sai; o lugar dela fica (a cena mede por ela). */
+.hero[data-cena="ativa"] .hero-quadro > * { visibility: hidden; }
+.hero-defs { position: absolute; width: 0; height: 0; }
+.hero-camada { position: absolute; inset: 0; color: var(--cor-preto); }
+.hero-camada svg { display: block; width: 100%; height: 100%; max-width: none; overflow: visible; fill: currentColor; }
+/* Os números do glitch são os de disposicao.ts (GLITCH): cópia azul e duas fatias, cada uma com o fundo por baixo. */
+.hero-camada-azul { color: var(--cor-azul); opacity: 0.9; }
+.hero-camada-azul svg { transform: translateX(-0.86%); }
+.hero-fatia { background: var(--cor-fundo); }
+.hero-fatia-1 { clip-path: inset(36.5% -4% 52.7% -4%); }
+.hero-fatia-1 svg { transform: translateX(1.71%); }
+.hero-fatia-2 { clip-path: inset(63.4% -4% 31.2% -4%); }
+.hero-fatia-2 svg { transform: translateX(-1.14%); }
+
+/* Lâminas de vidro: 3 no celular (74×200), 5 no desktop (168×380), giradas −8°, centradas na altura da palavra.
+   Desfoque leve: na captura aprovada, a palavra atrás do vidro fica nítida (o Penpot anota 6–10 px, mas não o desenha). */
+.hero-lamina {
+  position: absolute;
+  top: 50%;
+  left: calc(10.7% + var(--i) * 25.9%);
+  width: 21.1%;
+  aspect-ratio: 74 / 200;
+  transform: translateY(-50%) rotate(-8deg);
+  border: 1px solid color-mix(in srgb, var(--cor-papel) 90%, transparent);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--cor-papel) 16%, transparent);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--cor-preto) 8%, transparent);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+}
+.hero-lamina-extra { display: none; }
+
+/* ---------- título, apoio, condição e botões ---------- */
+.hero-base { padding: var(--espaco-4) var(--hero-margem) var(--espaco-4); }
+.hero-titulo { font: 600 44px/0.95 var(--fonte-sans); letter-spacing: -1.5px; }
+.hero-titulo > span { display: block; }
+.hero-titulo em { font-family: var(--fonte-serif); font-weight: 400; font-style: italic; }
+.hero-lado { margin-top: var(--espaco-4); }
+.hero-apoio { font-size: 17px; line-height: 1.35; }
+.hero-condicao { font-size: 13px; line-height: 1.35; }
+.hero-condicao-celular { margin-top: calc(var(--espaco-2) + var(--espaco-1)); }
+.hero-condicao-desktop { display: none; }
+.hero-acoes { display: flex; flex-direction: column; align-items: center; gap: var(--espaco-3); margin-top: var(--espaco-4); }
+.hero-botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-2);
+  align-self: stretch;
+  height: 56px;
+  padding: 0 var(--espaco-5);
+  border-radius: var(--raio-botao);
+  background: var(--cor-preto);
+  color: var(--cor-claro);
+  font: 500 17px/1.2 var(--fonte-sans);
+}
+.hero-link { font: 500 15px/1.2 var(--fonte-sans); text-decoration: underline; text-underline-offset: 3px; }
+.hero-botao:focus-visible,
+.hero-link:focus-visible { outline: 2px solid var(--cor-azul); outline-offset: 3px; }
+
+/* ---------- faixa de benefícios: corre sozinha, devagar; para com o mouse em cima, no reduzido e sem WebGL ---------- */
+.hero-beneficios {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  margin-top: auto;
+  padding-left: var(--hero-margem);
+  border-top: 1px solid var(--cor-cinza-claro);
+  overflow: hidden;
+  font: 500 11px/1.2 var(--fonte-mono);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.hero-trilho { display: flex; flex: none; animation: hero-correr var(--tempo-faixas) linear infinite; }
+.hero-trilho ul { display: flex; }
+.hero-trilho li { display: flex; align-items: center; }
+.hero-trilho li::after { content: '·'; margin: 0 var(--espaco-3); }
+.hero-beneficios:hover .hero-trilho { animation-play-state: paused; }
+/* As 16 cópias são iguais: andar metade da trilha (8 cópias) volta ao mesmo desenho, sem emenda. */
+@keyframes hero-correr { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-trilho { animation: none; }
+}
+.modo-reduzido .hero-trilho,
+.modo-sem-webgl .hero-trilho { animation: none; }
+
+/* ---------- desktop ---------- */
+@media (min-width: 900px) {
+  .hero {
+    --hero-margem: calc(var(--espaco-5) + var(--espaco-2));
+    height: 100vh;
+    height: 100svh;
+    min-height: 640px;
+    padding-top: calc(var(--altura-faixa, 0px) + var(--altura-cabecalho, 72px) + var(--espaco-6));
+  }
+  .hero-selo { gap: var(--espaco-3); font-size: 12px; }
+  .hero-ponto { margin-right: calc(-1 * var(--espaco-2)); }
+  .hero-selo-longo { margin-left: var(--espaco-2); }
+  html:not([data-oferta="encerrada"]) .hero-selo-longo { display: inline; }
+  .hero-selo-curto { display: none; }
+
+  /* A palavra ocupa o meio que sobra entre o selo e o título (o título fica no mesmo lugar com e sem a oferta). */
+  .hero-palavra { flex: 1 1 0; min-height: 22vw; height: auto; margin-bottom: var(--espaco-6); }
+  .hero-camada-azul svg { transform: translateX(-0.45%); }
+  .hero-fatia-1 { clip-path: inset(36.8% -4% 57.65% -4%); }
+  .hero-fatia-1 svg { transform: translateX(0.89%); }
+  .hero-fatia-2 { clip-path: inset(63.9% -4% 33.33% -4%); }
+  .hero-fatia-2 svg { transform: translateX(-0.67%); }
+  .hero-lamina {
+    left: calc(7.35% + var(--i) * 17.19%);
+    width: 12.5%;
+    aspect-ratio: 168 / 380;
+    border-radius: 10px;
+    box-shadow: 0 18px 40px color-mix(in srgb, var(--cor-preto) 8%, transparent);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+  .hero-lamina-extra { display: block; }
+
+  .hero-base {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 532px);
+    column-gap: var(--espaco-5);
+    padding: 0 var(--hero-margem) var(--espaco-5);
+  }
+  .hero-titulo { font-size: 64px; letter-spacing: -2.4px; }
+  .hero-lado { margin-top: 0; }
+  .hero-apoio { max-width: 500px; font-size: 19px; }
+  .hero-condicao-celular { display: none; }
+  /* A condição fica sob os botões sem ocupar altura: o título não sobe na oferta. */
+  .hero-condicao-desktop { display: block; position: absolute; top: calc(100% + var(--espaco-2) + var(--espaco-1)); left: 0; white-space: nowrap; }
+  .hero-acoes { position: relative; flex-direction: row; gap: calc(var(--espaco-4) + var(--espaco-1)); margin-top: calc(var(--espaco-4) + var(--espaco-2)); }
+  .hero-botao { align-self: auto; }
+  .hero-link { font-size: 16px; }
+}
