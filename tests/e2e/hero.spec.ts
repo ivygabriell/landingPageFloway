@@ -123,17 +123,3 @@ test('com movimento, a faixa de benefícios corre', async ({ page }) => {
   expect((await item.boundingBox())!.x).toBeLessThan(antes);
 });
 
-// DIAGNÓSTICO TEMPORÁRIO (sai antes do merge): tempos da entrada no CI.
-test('diag entrada', async ({ page }) => {
-  await page.addInitScript(() => {
-    const w = window as unknown as { _log: string[] };
-    w._log = [];
-    const t = () => Math.round(performance.now());
-    new MutationObserver((ms) => ms.forEach((m) => w._log.push(t() + ' ' + (m.target as Element).tagName + ' ' + m.attributeName + '=' + String((m.target as Element).getAttribute(m.attributeName!)).replace(/__\S+/g, '')))).observe(document, { attributes: true, subtree: true, attributeFilter: ['class', 'data-entrada', 'data-cena'] });
-    new PerformanceObserver((l) => l.getEntries().forEach((e) => w._log.push('longtask ' + Math.round(e.startTime) + ' +' + Math.round(e.duration)))).observe({ type: 'longtask', buffered: true });
-    addEventListener('load', () => w._log.push(t() + ' load'));
-  });
-  await page.goto('/');
-  await page.waitForTimeout(6000);
-  console.log('DIAG\n' + (await page.evaluate(() => (window as unknown as { _log: string[] })._log)).join('\n'));
-});

@@ -92,26 +92,52 @@ test('a palavra é o 4º path da assinatura (public/marca), com a mesma transla�
 });
 
 describe('entrada no desktop com a cena', () => {
+  let acelerado = true;
+  const cenaMontada = vi.fn();
   beforeEach(() => {
+    acelerado = true;
+    cenaMontada.mockClear();
     vi.resetModules();
     vi.doMock('@/lib/webgl', () => ({ marcarModo: () => 'desktop' }));
-    vi.doMock('@/secoes/hero/CenaHero', () => ({ CenaHero: () => null }));
+    vi.doMock('@/secoes/hero/aceleracao', () => ({ temWebglAcelerado: () => acelerado }));
+    vi.doMock('@/secoes/hero/CenaHero', () => ({
+      CenaHero: () => {
+        cenaMontada();
+        return null;
+      },
+    }));
     vi.useFakeTimers();
   });
   afterEach(() => {
     vi.doUnmock('@/lib/webgl');
+    vi.doUnmock('@/secoes/hero/aceleracao');
     vi.doUnmock('@/secoes/hero/CenaHero');
     vi.useRealTimers();
     vi.restoreAllMocks();
   });
 
+  const montarComCena = async () => {
+    const { Hero: HeroComCena } = await import('@/secoes/hero');
+    return render(<HeroComCena />).container.querySelector('section')!;
+  };
+
   // O CI (SwiftShader, máquina lenta) monta a seção tarde: o prazo conta do início da carga, não da montagem.
   test('montada tarde (1,5 s depois do início da carga), a seção fica pronta até 1,7 s, sem esperar a cena', async () => {
     vi.spyOn(performance, 'now').mockReturnValue(1500);
-    const { Hero: HeroComCena } = await import('@/secoes/hero');
-    const secao = render(<HeroComCena />).container.querySelector('section')!;
+    const secao = await montarComCena();
     expect(secao.dataset.entrada).toBeUndefined();
     act(() => vi.advanceTimersByTime(200));
     expect(secao.dataset.entrada).toBe('pronta');
+  });
+
+  // WebGL só por software (SwiftShader no CI, aparelho sem GPU): cada quadro da cena travava a página por ~110 ms.
+  test('sem aceleração de vídeo, a cena não monta e a composição parada já é a entrada pronta', async () => {
+    acelerado = false;
+    const secao = await montarComCena();
+    await act(async () => {
+      await vi.runAllTimersAsync();
+    });
+    expect(secao.dataset.entrada).toBe('pronta');
+    expect(cenaMontada).not.toHaveBeenCalled();
   });
 });
