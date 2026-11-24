@@ -1,0 +1,190 @@
+/* Conceitos (R-06): a prova. Mobile-first; desktop a partir de 900 px. Movimento só com transform e opacity. */
+.conceitos {
+  overflow-x: clip;
+  padding: var(--espaco-6) var(--margem-da-pagina);
+}
+
+.conceitos a:focus-visible {
+  outline: 2px solid var(--cor-azul);
+  outline-offset: 3px;
+}
+
+.conceitos__topo {
+  display: grid;
+  row-gap: var(--espaco-3);
+}
+.conceitos__selo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  font: 500 11px/1 var(--fonte-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.conceitos__ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cor-azul);
+}
+.conceitos__selo-texto { margin-left: var(--espaco-3); }
+.conceitos__titulo {
+  font: 600 38px/1.05 var(--fonte-sans);
+  letter-spacing: -0.05em;
+}
+.conceitos__titulo em { font: italic 400 1.08em/1 var(--fonte-serif); letter-spacing: -0.02em; }
+.conceitos__apoio {
+  max-width: 30em;
+  font: 400 17px/1.45 var(--fonte-sans);
+  letter-spacing: -0.01em;
+}
+
+/* A galeria encosta nas bordas da tela; a margem da página vira o recuo de dentro. */
+.conceitos__galeria {
+  margin: var(--espaco-6) calc(-1 * var(--margem-da-pagina)) 0;
+  padding: var(--espaco-3) var(--margem-da-pagina);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--margem-da-pagina);
+  scrollbar-width: none;
+}
+.conceitos__trilho {
+  position: relative;
+  display: flex;
+  gap: var(--espaco-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.conceitos__trilho li { flex: none; scroll-snap-align: start; }
+
+/* Cartão */
+.cartao {
+  --largura-cartao: 280px;
+  display: grid;
+  row-gap: var(--espaco-2);
+  width: var(--largura-cartao);
+  color: var(--cor-texto);
+  text-decoration: none;
+  transition: transform var(--tempo-hover) var(--curva-hover);
+}
+/* Sem a capa, fica este fundo (e o nome embaixo). */
+.cartao__capa {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 730 / 1080;
+  border-radius: var(--raio-cartao);
+  background: var(--cor-cinza-claro);
+  transition: box-shadow var(--tempo-hover) var(--curva-hover);
+}
+.cartao__capa img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cartao__selo {
+  position: absolute;
+  top: var(--espaco-3);
+  left: var(--espaco-3);
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 calc(var(--espaco-2) + var(--espaco-1));
+  border: 1px solid var(--cor-preto);
+  border-radius: var(--raio-botao);
+  background: var(--cor-claro);
+  font: 500 10px/1 var(--fonte-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+/* "Abrir o site ↗": só no hover e no foco (visibility, para o leitor de tela e o teste saberem que está escondido). */
+.cartao__abrir {
+  position: absolute;
+  right: var(--espaco-3);
+  bottom: var(--espaco-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-1);
+  height: 40px;
+  padding: 0 var(--espaco-4);
+  border-radius: var(--raio-botao);
+  background: var(--cor-papel);
+  font: 500 15px/1 var(--fonte-sans);
+  letter-spacing: -0.01em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--tempo-curto) ease, visibility var(--tempo-curto);
+}
+.cartao__nome {
+  margin-top: var(--espaco-2);
+  font: 600 20px/1.2 var(--fonte-sans);
+  letter-spacing: -0.04em;
+}
+.cartao__meta {
+  font: 500 11px/1.2 var(--fonte-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: pre;
+}
+
+/* Hover (só onde há mouse) e foco pelo teclado: o cartão sobe, ganha sombra e mostra "Abrir o site". */
+.cartao:focus-visible { transform: translateY(calc(-1 * (var(--espaco-2) + var(--espaco-1)))); }
+.cartao:focus-visible .cartao__capa { box-shadow: 0 var(--espaco-4) var(--espaco-5) color-mix(in srgb, var(--cor-preto) 20%, transparent); }
+.cartao:focus-visible .cartao__abrir { opacity: 1; visibility: visible; }
+@media (hover: hover) {
+  .cartao:hover { transform: translateY(calc(-1 * (var(--espaco-2) + var(--espaco-1)))); }
+  .cartao:hover .cartao__capa { box-shadow: 0 var(--espaco-4) var(--espaco-5) color-mix(in srgb, var(--cor-preto) 20%, transparent); }
+  .cartao:hover .cartao__abrir { opacity: 1; visibility: visible; }
+}
+
+/* Botão contorno */
+.conceitos__botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--espaco-2) + var(--espaco-1));
+  width: max-content;
+  height: 52px;
+  margin: var(--espaco-5) 0 0 auto;
+  padding: 0 var(--espaco-4);
+  border: 1px solid var(--cor-preto);
+  border-radius: var(--raio-botao);
+  color: var(--cor-texto);
+  font: 500 17px/1 var(--fonte-sans);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+.conceitos__seta { transition: transform var(--tempo-hover) var(--curva-hover); }
+.conceitos__botao:focus-visible .conceitos__seta { transform: translateX(var(--espaco-1)); }
+@media (hover: hover) {
+  .conceitos__botao:hover .conceitos__seta { transform: translateX(var(--espaco-1)); }
+}
+
+@media (min-width: 900px) {
+  .conceitos { padding: var(--espaco-7) var(--margem-da-pagina) var(--espaco-6); }
+  .conceitos__topo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 34%);
+    column-gap: var(--espaco-6);
+  }
+  .conceitos__selo { grid-column: 1 / -1; font-size: 12px; }
+  .conceitos__titulo { font-size: 72px; letter-spacing: -0.055em; }
+  .conceitos__apoio { align-self: center; font-size: 18px; }
+  .conceitos__galeria {
+    margin-top: var(--espaco-5);
+    scroll-snap-type: x proximity;
+  }
+  .conceitos__trilho { gap: var(--espaco-4); }
+  /* A capa cabe na tela presa: a altura que sobra abaixo da faixa, do cabeçalho e do topo da seção (~300 px). */
+  .cartao { --largura-cartao: min(316px, calc((100svh - var(--altura-faixa) - var(--altura-cabecalho) - 300px) * 730 / 1080)); }
+  .cartao__nome { font-size: 22px; }
+  .conceitos__botao { height: 60px; padding: 0 var(--espaco-4); font-size: 18px; }
+}
+
+/* Presa (desktop com movimento, Movimento.tsx): a galeria não rola, quem anda é o trilho; a capa fica maior
+   que o cartão para a paralaxe não mostrar a borda. */
+.conceitos--presa .conceitos__presa { padding-top: var(--espaco-5); background: var(--cor-fundo); }
+.conceitos--presa .conceitos__galeria { overflow: clip; }
+.conceitos--presa .cartao__capa img { scale: 1.1; }
+.conceitos--presa .conceitos__trilho { will-change: transform; }
